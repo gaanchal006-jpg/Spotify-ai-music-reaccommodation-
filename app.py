@@ -9,7 +9,7 @@ import urllib.parse
 from sklearn.neighbors import NearestNeighbors
 
 # ---------------- LOAD DATA ---------------- #
-df = pd.read_csv(r"C:\Users\DELL\Downloads\spotify (2).csv")
+df = pd.read_csv("spotify (2).csv")
 
 # ================= LOAD KNN MODEL =================
 
