@@ -1,0 +1,13 @@
+Track_Name,Artist,Album,Genre,Popularity,Danceability,Energy,Valence,Tempo,Duration
+Kesariya,Arijit Singh,Brahmastra,Bollywood,92,0.65,0.72,0.7,120,270000
+Tum Hi Ho,Arijit Singh,Aashiqui 2,Romantic,95,0.55,0.6,0.45,95,260000
+Believer,Imagine Dragons,Evolve,Rock,88,0.7,0.85,0.5,125,204000
+Perfect,Ed Sheeran,Divide,Pop,90,0.6,0.55,0.72,100,263000
+Shape of You,Ed Sheeran,Divide,Pop,91,0.82,0.8,0.8,96,234000
+Apna Bana Le,Arijit Singh,Bhediya,Bollywood,89,0.68,0.7,0.65,110,240000
+Blinding Lights,The Weeknd,After Hours,Pop,94,0.75,0.78,0.55,171,200000
+Levitating,Dua Lipa,Future Nostalgia,Dance Pop,86,0.85,0.88,0.76,103,203000
+Heat Waves,Glass Animals,Dreamland,Pop,87,0.76,0.74,0.6,91,238000
+Closer,The Chainsmokers,Bouquet,Electronic,85,0.79,0.82,0.67,95,244000
+Hawayein,Arijit Singh,Jab Harry Met Sejal,Bollywood,84,0.62,0.64,0.58,108,285000
+Tera Ban Jaunga,Akhil Sachdeva,Kabir Singh,Romantic,88,0.58,0.61,0.5,98,300000
