@@ -372,14 +372,6 @@ with st.sidebar:
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
 
-  Bilkul! Ek Ultra-Premium, Modern Glassmorphic Dashboard UI ke saath CSS/JS animations aur glowing interactive cards add kar dete hain.
-
-Aapke Streamlit app ke 🏠 Home page ke liye niche ek Unique & Premium Card Layout diya gaya hai. Isme glowing badge, glowing line, hover effects, aur feature metrics/highlights bhi shamil hain:
-
-Python
-# ===================== 🏠 HOME PAGE =====================
-if page == "🏠 Home":
-
     # Premium CSS & Styling
     st.markdown(
         """
