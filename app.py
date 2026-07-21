@@ -82,28 +82,20 @@ st.sidebar.markdown("""
 
 </style>
 
-<div class="brand">
-
-<div class="icon">🎧</div>
-
-<div class="name">
-<span>Muskan Nova AI</span> 
-</div>
-
-<div class="line"></div>
-
-<div class="tag">
-Machine Learning Music<br>
-Recommendation System
-</div>
-
-<div class="badge">
-Powered by KNN
-</div>
-
-</div>
+st.markdown("""
+<h1>🎵 MuskanNova AI Dashboard</h1>
 """, unsafe_allow_html=True)
-with st.sidebar:
+col1, col2 = st.columns([1,5])
+
+with col1:
+    st.image("muskannova_logo.png", width=100)
+
+with col2:
+    st.markdown("""
+    <h1 style="color:white;">MuskanNova AI Dashboard</h1>
+    <h3 style="color:#FFD700;">Intelligent Music Recommendation System</h3>
+    """, unsafe_allow_html=True)
+    st.sidebar.image("Neon music AI logo design", width=150)
 
     st.markdown("""
     <div style="
