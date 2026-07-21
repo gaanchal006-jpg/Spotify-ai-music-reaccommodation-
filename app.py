@@ -80,18 +80,15 @@ st.sidebar.markdown("""
 }
 
 # ===================== PREMIUM BRAND CARD =====================
-
 st.sidebar.markdown("""
 <style>
 .brand-card{
     background:linear-gradient(145deg,#0b1220,#111827,#020617);
-    border-radius:22px;
-    padding:22px;
-    text-align:center;
-    border:1px solid rgba(34,197,94,.35);
-    box-shadow:0 0 25px rgba(34,197,94,.30);
-    margin-bottom:18px;
+    border-radius:20px;
+    padding:20px;
 }
+</style>
+""", unsafe_allow_html=True)
 
 .brand-title{
     font-size:30px;
