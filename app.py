@@ -42,7 +42,7 @@ st.sidebar.markdown("""
     inset 0 0 20px rgba(0,0,0,.8);
 
     margin-bottom:35px !important;
-      background:blue  !important;
+   background: linear-gradient(135deg,#d9f99d,#86efac,#22c55e) !important;
 }
 
 
