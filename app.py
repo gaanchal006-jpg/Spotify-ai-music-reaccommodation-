@@ -381,93 +381,53 @@ if page == "🏠 Home":
     st.markdown("""
     <style>
 
-    .hero-card{
-        background:
-        radial-gradient(circle at top left,#22c55e33,transparent 35%),
-        linear-gradient(135deg,#020617,#052e16,#064e3b);
+    .main-card{
+        background: linear-gradient(
+            135deg,
+            #020617,
+            #064e3b,
+            #16a34a
+        );
 
+        padding:40px;
         border-radius:30px;
-        padding:45px 30px;
         text-align:center;
 
-        border:1px solid rgba(34,197,94,0.45);
+        border:1px solid #22c55e;
 
         box-shadow:
-        0 0 40px rgba(34,197,94,0.35),
-        inset 0 0 40px rgba(255,255,255,0.05);
-
-        animation: glow 3s infinite alternate;
+        0 0 35px rgba(34,197,94,0.4);
 
         margin-bottom:30px;
     }
 
 
-    @keyframes glow{
-        from{
-            box-shadow:
-            0 0 20px rgba(34,197,94,0.25);
-        }
-
-        to{
-            box-shadow:
-            0 0 45px rgba(34,197,94,0.55);
-        }
-    }
-
-
-    .music-icon{
+    .icon-box{
 
         font-size:70px;
 
-        background:
-        linear-gradient(90deg,#22c55e,#86efac);
+        margin-bottom:20px;
 
-        border-radius:50%;
-
-        width:110px;
-        height:110px;
-
-        display:flex;
-        align-items:center;
-        justify-content:center;
-
-        margin:auto;
-
-        box-shadow:
-        0 0 30px rgba(34,197,94,0.7);
+        filter:
+        drop-shadow(0 0 20px #22c55e);
 
     }
 
 
-    .hero-title{
+    .title{
 
-        margin-top:25px;
+        font-size:48px;
 
-        font-size:52px;
+        font-weight:900;
 
-        font-weight:1000;
+        color:white;
 
-        letter-spacing:2px;
-
-        background:
-        linear-gradient(
-        90deg,
-        #ffffff,
-        #86efac,
-        #22c55e
-        );
-
-        -webkit-background-clip:text;
-
-        color:transparent;
+        margin-bottom:15px;
 
     }
 
 
-
-    .hero-sub{
-
-        margin-top:18px;
+    .subtitle{
 
         font-size:25px;
 
@@ -478,88 +438,93 @@ if page == "🏠 Home":
     }
 
 
+    .tag{
 
-    .hero-tag{
-
-        margin-top:22px;
+        margin-top:20px;
 
         font-size:18px;
 
-        color:#e2e8f0;
-
-        font-weight:600;
-
-    }
-
-
-    .badge{
-
-        margin-top:25px;
-
-        display:inline-block;
-
-        padding:10px 25px;
-
-        border-radius:30px;
-
-        background:
-        rgba(34,197,94,0.15);
-
-        border:
-        1px solid rgba(34,197,94,0.5);
-
-        color:#86efac;
-
-        font-weight:700;
+        color:white;
 
     }
 
 
     </style>
-
-
-
-    <div class="hero-card">
-
-
-        <div class="music-icon">
-        🎧
-        </div>
-
-
-
-        <div class="hero-title">
-        Muskan Nova AI
-        </div>
-
-
-
-        <div class="hero-sub">
-        Intelligent Music Recommendation System
-        </div>
-
-
-
-        <div class="hero-tag">
-        ✨ Discover • Analyze • Recommend • Enjoy ✨
-        </div>
-
-
-
-        <div class="badge">
-        🤖 Powered by Machine Learning + AI
-        </div>
-
-
-
-    </div>
-
-
     """, unsafe_allow_html=True)
 
 
 
-    st.write("")
+    st.markdown(
+    """
+    <div class="main-card">
+
+        <div class="icon-box">
+            🎧
+        </div>
+
+        <div class="title">
+            Muskan Nova AI
+        </div>
+
+        <div class="subtitle">
+            Intelligent Music Recommendation System
+        </div>
+
+        <div class="tag">
+            ✨ Discover • Analyze • Recommend • Enjoy ✨
+        </div>
+
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
+
+
+
+    # Dashboard Metrics
+
+    col1,col2,col3,col4 = st.columns(4)
+
+
+    with col1:
+        st.metric(
+            "🎵 Total Songs",
+            len(df)
+        )
+
+
+    with col2:
+        st.metric(
+            "🎤 Artists",
+            df["Artist"].nunique()
+        )
+
+
+    with col3:
+        st.metric(
+            "🔥 Avg Popularity",
+            round(df["Popularity"].mean(),2)
+        )
+
+
+    with col4:
+        st.metric(
+            "⚡ Avg Energy",
+            round(df["Energy"].mean(),2)
+        )
+
+
+
+    st.markdown("---")
+
+
+    st.subheader("🎶 Trending Songs")
+
+
+    st.dataframe(
+        df.head(10),
+        use_container_width=True
+    )
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
 
