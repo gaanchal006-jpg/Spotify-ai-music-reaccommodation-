@@ -371,11 +371,7 @@ with st.sidebar:
     
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-# Session State to handle Quick Explore Toggle
-    if "show_explorer" not in st.session_state:
-        st.session_state.show_explorer = False
-
-    # --- 1. Pure CSS Styling ---
+# --- 1. Pure CSS Styling ---
     st.markdown(
         """<style>
     /* Hero Banner Container */
@@ -509,47 +505,15 @@ if page == "🏠 Home":
 
     st.markdown("---")
 
-    # --- 4. Interactive Call To Action & Explorer Section ---
+    # --- 4. Direct Navigation Button (Direct Recommendation Page Open) ---
     col_btn1, col_btn2, col_btn3 = st.columns([1, 2, 1])
     with col_btn2:
-        if st.button("🚀 Explore Quick AI Music Hub", use_container_width=True):
-            st.session_state.show_explorer = not st.session_state.show_explorer
-
-    # --- 5. Dynamic Explorer Content (Appears on Click) ---
-    if st.session_state.show_explorer:
-        st.write("")
-        with st.container(border=True):
-            st.markdown("### 🎧 **Quick Music Explorer & AI Mood Match**")
-            st.caption(
-                "Select a mood or genre below to quick-test the KNN vector engine."
-            )
-
-            col1, col2 = st.columns(2)
-            with col1:
-                genre = st.selectbox(
-                    "🎵 Choose Vibe / Genre:",
-                    ["Chill & Lo-Fi", "Energetic Pop", "Deep Focus / Acoustic", "Party & EDM", "Romantic Acoustic"],
-                )
-            with col2:
-                energy = st.select_slider(
-                    "⚡ Energy Level Target:", options=["Low", "Medium", "High", "Extreme"]
-                )
-
-            st.success(f"✨ KNN Model Filtered Vectors for: **{genre}** with **{energy}** Energy!")
-
-            # Quick Suggestions Preview
-            st.markdown("##### 🌟 **Top AI Recommendations Preview:**")
-            p1, p2, p3 = st.columns(3)
-            with p1:
-                st.info("🎶 **Track 1:** Midnight Synthwave\n\n*Similarity Match: 98.4%*")
-            with p2:
-                st.info("🎶 **Track 2:** Acoustic Sunset\n\n*Similarity Match: 96.1%*")
-            with p3:
-                st.info("🎶 **Track 3:** Neon Beats\n\n*Similarity Match: 94.8%*")
-
-            if st.button("🔥 Go to Full Recommendation Page"):
-                st.session_state.page = "🎵 Recommend"
-                st.rerun()
+        if st.button("🚀 Go to Recommendation Page", use_container_width=True):
+            # Target Page Redirect Logic
+            # Note: Agar aapke sidebar mein Recommendation page ka naam thoda alag hai
+            # (e.g., "🎵 Recommendation", "Recommendation"), to wahi exact string likhein.
+            st.session_state.page = "🎵 Recommend" 
+            st.rerun()
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
 
