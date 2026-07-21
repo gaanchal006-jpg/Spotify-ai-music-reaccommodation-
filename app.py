@@ -373,46 +373,121 @@ with st.sidebar:
 if page == "🏠 Home":
 
     # ================= Premium Banner ===============
+ 
     st.markdown("""
     <style>
 
     .main-card{
-        background: linear-gradient(135deg,#020617,#064e3b,#16a34a);
-        padding:40px;
-        border-radius:30px;
+        background:
+        radial-gradient(circle at top,#16a34a,#064e3b,#020617);
+
+        padding:45px;
+        border-radius:35px;
+
         text-align:center;
-        border:1px solid #22c55e;
-        box-shadow:0 0 35px rgba(34,197,94,0.4);
-        margin-bottom:30px;
+
+        border:1px solid rgba(34,197,94,0.8);
+
+        box-shadow:
+        0 0 40px rgba(34,197,94,0.45),
+        inset 0 0 30px rgba(34,197,94,0.15);
+
+        margin-bottom:35px;
     }
+
 
     .icon-box{
-        font-size:70px;
-        margin-bottom:20px;
-        filter:drop-shadow(0 0 20px #22c55e);
+        font-size:75px;
+
+        margin-bottom:15px;
+
+        filter:
+        drop-shadow(0 0 25px #22c55e);
     }
+
 
     .title{
-        font-size:48px;
+
+        font-size:50px;
+
         font-weight:900;
+
         color:white;
-        margin-bottom:15px;
+
+        letter-spacing:1px;
+
     }
+
 
     .subtitle{
-        font-size:25px;
+
+        margin-top:15px;
+
+        font-size:26px;
+
         font-weight:800;
+
         color:#fde047;
+
     }
+
 
     .tag{
-        margin-top:20px;
+
+        margin-top:25px;
+
         font-size:18px;
-        color:white;
+
+        color:#ffffff;
+
+        letter-spacing:1px;
+
     }
 
+
+    .knn{
+
+        margin-top:20px;
+
+        font-size:20px;
+
+        font-weight:700;
+
+        color:#22c55e;
+
+    }
+
+
+    .ai-text{
+
+        margin-top:10px;
+
+        font-size:16px;
+
+        color:#cbd5e1;
+
+    }
+
+
+    .bottom-line{
+
+        height:2px;
+
+        width:70%;
+
+        margin:20px auto;
+
+        background:#22c55e;
+
+        box-shadow:0 0 15px #22c55e;
+
+    }
+
+
     </style>
+
     """, unsafe_allow_html=True)
+
 
 
     st.markdown("""
@@ -422,21 +497,39 @@ if page == "🏠 Home":
             🎧
         </div>
 
+
         <div class="title">
             Muskan Nova AI
         </div>
+
 
         <div class="subtitle">
             Intelligent Music Recommendation System
         </div>
 
+
         <div class="tag">
             ✨ Discover • Analyze • Recommend • Enjoy ✨
         </div>
 
-    </div>
-    """, unsafe_allow_html=True)
 
+        <div class="knn">
+            Powered by KNN
+        </div>
+
+
+        <div class="bottom-line">
+        </div>
+
+
+        <div class="ai-text">
+            Machine Learning • AI • Music Intelligence
+        </div>
+
+
+    </div>
+
+    """, unsafe_allow_html=True)
 
 
     # ================= Dashboard Overview =================
