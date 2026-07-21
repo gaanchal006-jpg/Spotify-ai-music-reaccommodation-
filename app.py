@@ -81,7 +81,7 @@ st.sidebar.markdown("""
 
 
 </style>
-<img src="https://your-image-path/MuskanNovaAI.png" 
+st.image("https://raw.githubusercontent.com/USERNAME/REPO/main/MuskanNovaAI.png")
 style="
 width:120px;
 height:120px;
