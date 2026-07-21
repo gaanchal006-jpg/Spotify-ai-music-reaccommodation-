@@ -379,24 +379,131 @@ with st.sidebar:
 
 if page == "🏠 Home":
 
-    # ================= Premium Banner =================
-    st.markdown("""
-    <div style="
-        background:linear-gradient(90deg,#000000,#1DB954);
-        padding:30px;
-        border-radius:20px;
-        text-align:center;
-        box-shadow:0px 5px 15px rgba(0,0,0,0.4);
-    ">
-        <h1 style="color:white;">🎵  Muskan Nova AI Dashboard</h1>
-        <h3 style="color:#FFD700;">
-            Muskan Nova AI – Intelligent Music Recommendation System
-        </h3>
-        <p style="color:white;">
-            🎧 Discover • Analyze • Recommend • Enjoy
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+st.markdown("""
+<style>
+
+.hero-card{
+
+    background:
+    linear-gradient(
+        135deg,
+        #020617,
+        #052e16 45%,
+        #16a34a
+    );
+
+    border-radius:25px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border:1px solid rgba(34,197,94,0.5);
+
+    box-shadow:
+    0 0 30px rgba(34,197,94,0.35),
+    inset 0 0 30px rgba(255,255,255,0.08);
+
+    margin-bottom:25px;
+
+}
+
+
+/* Main Title */
+
+.hero-title{
+
+    font-size:48px;
+
+    font-weight:900;
+
+    background:
+    linear-gradient(
+    90deg,
+    #ffffff,
+    #bbf7d0
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    letter-spacing:1px;
+
+}
+
+
+
+/* Subtitle */
+
+.hero-sub{
+
+    margin-top:15px;
+
+    font-size:26px;
+
+    font-weight:800;
+
+    color:#fde047;
+
+}
+
+
+
+/* Tagline */
+
+.hero-tag{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    color:#ffffff;
+
+    font-weight:600;
+
+}
+
+
+/* AI Icon */
+
+.ai-icon{
+
+    font-size:55px;
+
+    filter:
+    drop-shadow(0 0 15px #22c55e);
+
+}
+
+</style>
+
+
+<div class="hero-card">
+
+<div class="ai-icon">
+🎧
+</div>
+
+
+<div class="hero-title">
+Muskan Nova AI Dashboard
+</div>
+
+
+<div class="hero-sub">
+Muskan Nova AI – Intelligent Music Recommendation System
+</div>
+
+
+<div class="hero-tag">
+✨ Discover • Analyze • Recommend • Enjoy ✨
+</div>
+
+
+</div>
+
+""", unsafe_allow_html=True)
 
     st.write("")
 
