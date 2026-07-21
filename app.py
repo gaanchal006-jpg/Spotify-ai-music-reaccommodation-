@@ -374,120 +374,67 @@ if page == "🏠 Home":
 
     # ================= Premium Banner ===============
  
+
     st.markdown("""
     <style>
 
     .main-card{
-        background:
-        radial-gradient(circle at top,#16a34a,#064e3b,#020617);
-
+        background:radial-gradient(circle at top,#16a34a,#064e3b,#020617);
         padding:45px;
         border-radius:35px;
-
         text-align:center;
-
         border:1px solid rgba(34,197,94,0.8);
-
-        box-shadow:
-        0 0 40px rgba(34,197,94,0.45),
-        inset 0 0 30px rgba(34,197,94,0.15);
-
+        box-shadow:0 0 40px rgba(34,197,94,0.45);
         margin-bottom:35px;
     }
 
-
     .icon-box{
         font-size:75px;
-
         margin-bottom:15px;
-
-        filter:
-        drop-shadow(0 0 25px #22c55e);
+        filter:drop-shadow(0 0 25px #22c55e);
     }
-
 
     .title{
-
         font-size:50px;
-
         font-weight:900;
-
         color:white;
-
-        letter-spacing:1px;
-
     }
-
 
     .subtitle{
-
         margin-top:15px;
-
         font-size:26px;
-
         font-weight:800;
-
         color:#fde047;
-
     }
-
 
     .tag{
-
         margin-top:25px;
-
         font-size:18px;
-
-        color:#ffffff;
-
-        letter-spacing:1px;
-
+        color:white;
     }
-
 
     .knn{
-
         margin-top:20px;
-
         font-size:20px;
-
         font-weight:700;
-
         color:#22c55e;
-
     }
-
 
     .ai-text{
-
         margin-top:10px;
-
         font-size:16px;
-
         color:#cbd5e1;
-
     }
-
 
     .bottom-line{
-
         height:2px;
-
         width:70%;
-
         margin:20px auto;
-
         background:#22c55e;
-
-        box-shadow:0 0 15px #22c55e;
-
     }
 
-
     </style>
-
     """, unsafe_allow_html=True)
-
 
 
     st.markdown("""
@@ -497,40 +444,30 @@ if page == "🏠 Home":
             🎧
         </div>
 
-
         <div class="title">
             Muskan Nova AI
         </div>
-
 
         <div class="subtitle">
             Intelligent Music Recommendation System
         </div>
 
-
         <div class="tag">
             ✨ Discover • Analyze • Recommend • Enjoy ✨
         </div>
-
 
         <div class="knn">
             Powered by KNN
         </div>
 
-
-        <div class="bottom-line">
-        </div>
-
+        <div class="bottom-line"></div>
 
         <div class="ai-text">
             Machine Learning • AI • Music Intelligence
         </div>
 
-
     </div>
-
     """, unsafe_allow_html=True)
-    st.write("Home Page Working")
 
 
     # ================= Dashboard Overview =================
