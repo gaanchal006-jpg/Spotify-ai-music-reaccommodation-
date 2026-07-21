@@ -485,8 +485,7 @@ if page == "🏠 Home":
     )
 
     # Clean HTML Code
-    st.markdown(
-        """
+    st.markdown( """
     <div class="premium-banner">
         <!-- Unique Equalizer Animation -->
         <div class="eq-container">
