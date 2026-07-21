@@ -371,118 +371,164 @@ with st.sidebar:
     
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-# Streamlit ke raw-text issue ko rokne ke liye clean CSS
-    st.markdown(
-"""<style>
-.premium-banner {
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(12px);
-    padding: 22px 20px;
-    border-radius: 18px;
-    text-align: center;
-    border: 1px solid rgba(34, 197, 94, 0.5);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(34, 197, 94, 0.15);
-    margin-bottom: 20px;
-}
+# --- UNIQUE TECHNIQUE: Variables mein CSS aur HTML store karenge ---
+    
+    # 1. Custom CSS (Ultra Premium & Unique)
+    home_css = """
+<style>
+    /* Sabse pehle Streamlit ke standard borders hide karte hain visual clean look ke liye */
+    [data-testid="stVerticalBlock"] > div:has(div.premium-container) {
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
 
-.eq-container {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 4px;
-    height: 22px;
-    margin-bottom: 6px;
-}
+    /* Main Container with 3D Depth & Radial Glow */
+    .premium-container {
+        position: relative;
+        background: radial-gradient(circle at center, #064e3b 0%, #020617 100%);
+        padding: 50px 30px;
+        border-radius: 35px;
+        text-align: center;
+        border: 2px solid rgba(34, 197, 94, 0.4);
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8),
+                    inset 0 0 20px rgba(34, 197, 94, 0.2);
+        margin-bottom: 30px;
+        overflow: hidden; /* Bokeh effect ke liye */
+    }
 
-.eq-bar {
-    width: 4px;
-    background: #22c55e;
-    border-radius: 4px;
-    box-shadow: 0 0 8px #22c55e;
-    animation: eqWave 1.2s ease-in-out infinite alternate;
-}
+    /* Unique Feature 1: Neon Bokeh Particles (Pure CSS) */
+    .premium-container::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background-image: 
+            radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.1) 1%, transparent 2%),
+            radial-gradient(circle at 80% 80%, rgba(74, 222, 128, 0.1) 2%, transparent 3%),
+            radial-gradient(circle at 30% 60%, rgba(34, 197, 94, 0.15) 1%, transparent 2%);
+        animation: bokehFloat 15s linear infinite;
+        opacity: 0.6;
+    }
 
-.eq-bar:nth-child(1) { height: 40%; animation-delay: 0.1s; }
-.eq-bar:nth-child(2) { height: 80%; animation-delay: 0.3s; }
-.eq-bar:nth-child(3) { height: 100%; animation-delay: 0.5s; }
-.eq-bar:nth-child(4) { height: 60%; animation-delay: 0.2s; }
-.eq-bar:nth-child(5) { height: 90%; animation-delay: 0.4s; }
+    @keyframes bokehFloat {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(10%); }
+    }
 
-@keyframes eqWave {
-    0% { transform: scaleY(0.3); }
-    100% { transform: scaleY(1.1); }
-}
+    /* Unique Feature 2: High-Focus Pulse Icon */
+    .icon-box {
+        position: relative;
+        font-size: 85px;
+        margin-bottom: 10px;
+        display: inline-block;
+        color: #ffffff;
+        filter: drop-shadow(0 0 30px #22c55e);
+    }
 
-.banner-title {
-    font-size: 32px;
-    font-weight: 800;
-    color: #ffffff;
-    margin: 4px 0;
-    line-height: 1.1;
-}
+    /* Icon ke peeche active ripple effect */
+    .icon-box::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #22c55e;
+        animation: iconRipple 2s infinite ease-out;
+    }
 
-.title-highlight {
-    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    @keyframes iconRipple {
+        0% { transform: scale(1); opacity: 1; }
+        100% { transform: scale(1.5); opacity: 0; }
+    }
 
-.banner-sub {
-    font-size: 14px;
-    font-weight: 600;
-    color: #cbd5e1;
-    margin-bottom: 10px;
-}
+    /* High-Gloss Gradient Title */
+    .title {
+        font-size: 56px;
+        font-weight: 900;
+        background: linear-gradient(135deg, #ffffff 10%, #22c55e 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -1px;
+        margin-bottom: 5px;
+    }
 
-.badge-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
+    /* Subtitle with Glowing Accent */
+    .subtitle {
+        margin-top: 10px;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fde047;
+        text-shadow: 0 0 15px rgba(253, 224, 71, 0.3);
+    }
 
-.tech-tag {
-    font-size: 11px;
-    font-weight: 700;
-    color: #fde047;
-    background: rgba(253, 224, 71, 0.1);
-    border: 1px solid rgba(253, 224, 71, 0.3);
-    padding: 3px 10px;
-    border-radius: 12px;
-}
+    /* Minimalist Space Saver Divider */
+    .bottom-line {
+        height: 1px;
+        width: 50%;
+        margin: 30px auto;
+        background: linear-gradient(90deg, transparent, #22c55e, transparent);
+        border: none;
+    }
 
-.algo-tag {
-    font-size: 11px;
-    font-weight: 700;
-    color: #4ade80;
-    background: rgba(34, 197, 94, 0.12);
-    border: 1px solid rgba(34, 197, 94, 0.4);
-    padding: 3px 10px;
-    border-radius: 12px;
-}
-</style>""",
-        unsafe_allow_html=True,
-    )
+    /* Unique Feature 3: Compact Premium Pills (Side by Side) */
+    .premium-badges {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
 
-    # Clean HTML ohne Leading Spaces
-    st.markdown(
-"""<div class="premium-banner">
-    <div class="eq-container">
-        <div class="eq-bar"></div>
-        <div class="eq-bar"></div>
-        <div class="eq-bar"></div>
-        <div class="eq-bar"></div>
-        <div class="eq-bar"></div>
+    .badge-item {
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 20px;
+        border: 1px solid;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .tag-knn {
+        background: rgba(34, 197, 94, 0.15);
+        border-color: #22c55e;
+        color: #4ade80;
+    }
+
+    .tag-ai {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.3);
+        color: #cbd5e1;
+    }
+</style>
+"""
+
+    # 2. Main Banner HTML
+    home_html = """
+<div class="premium-container">
+    <div class="icon-box">🎧</div>
+    <div class="title">Muskan Nova AI</div>
+    <div class="subtitle">Intelligent Music Recommendation System</div>
+    
+    <div class="premium-badges">
+        <span class="badge-item tag-knn">⚡ Powered by KNN</span>
+        <span class="badge-item tag-ai">Machine Learning • AI</span>
     </div>
-    <div class="banner-title">Muskan Nova <span class="title-highlight">AI</span></div>
-    <div class="banner-sub">Intelligent Music Recommendation System</div>
-    <div class="badge-wrapper">
-        <span class="tech-tag">✨ Music Intelligence</span>
-        <span class="algo-tag">⚡ Powered by KNN</span>
-    </div>
-</div>""",
-        unsafe_allow_html=True,
-    )
+
+    <div class="bottom-line"></div>
+    
+    <div style="font-size: 16px; color: white;">✨ Discover • Analyze • Recommend • Enjoy ✨</div>
+</div>
+"""
+
+    # --- Render Karenge (Visual Output) ---
+    st.markdown(home_css, unsafe_allow_html=True)
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
 
