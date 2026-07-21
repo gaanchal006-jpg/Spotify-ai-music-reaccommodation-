@@ -173,9 +173,9 @@ if page == "🏠 Home":
         text-align:center;
         box-shadow:0px 5px 15px rgba(0,0,0,0.4);
     ">
-        <h1 style="color:white;">🎵 Spotify AI Dashboard</h1>
+        <h1 style="color:white;">🎵 🎵 MuskanNova AI Dashboard</h1>
         <h3 style="color:#FFD700;">
-            Machine Learning Based Music Recommendation System
+            MuskanNova AI – Intelligent Music Recommendation System
         </h3>
         <p style="color:white;">
             🎧 Discover • Analyze • Recommend • Enjoy
