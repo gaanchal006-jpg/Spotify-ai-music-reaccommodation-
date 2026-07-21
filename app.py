@@ -20,7 +20,7 @@ scaler = joblib.load("spotify_scaler.pkl")
 # Load processed song dataset
 song_data = joblib.load("spotify_data.pkl")
 #---spotify image-----
-# ================= MUSKANNOVA AI PREMIUM SIDEBAR =================
+# ================= MUSKANNOVA AI COMPACT PREMIUM SIDEBAR =================
 
 st.sidebar.markdown("""
 <style>
@@ -28,38 +28,39 @@ st.sidebar.markdown("""
 .muskan-card{
     background:
     radial-gradient(circle at top,#18320d,#020617 45%,#000);
-    border-radius:30px;
-    padding:25px 15px;
-    height:520px;
+
+    border-radius:22px;
+    padding:15px 10px;
+
+    height:350px;
     text-align:center;
 
     border:1px solid rgba(150,255,70,.5);
 
     box-shadow:
-    0 0 30px rgba(120,255,50,.25),
-    inset 0 0 40px rgba(120,255,50,.08);
+    0 0 20px rgba(120,255,50,.25),
+    inset 0 0 25px rgba(120,255,50,.08);
 
     overflow:hidden;
 }
 
 
-/* Main AI Logo */
+/* AI Logo */
 
 .ai-logo{
-    font-size:100px;
+
+    font-size:65px;
     font-weight:900;
 
-    font-family:
-    'Arial Black',sans-serif;
+    font-family:'Arial Black',sans-serif;
 
     color:#d7ff76;
 
-    margin-top:15px;
+    margin-top:5px;
 
     text-shadow:
     0 0 8px #9cff3b,
-    0 0 25px #7cff00,
-    0 0 50px #43ff00;
+    0 0 20px #7cff00;
 
     animation:pulse 2s infinite;
 }
@@ -73,7 +74,7 @@ transform:scale(1);
 }
 
 50%{
-transform:scale(1.08);
+transform:scale(1.05);
 }
 
 100%{
@@ -83,14 +84,12 @@ transform:scale(1);
 }
 
 
-
-/* Heart Beat Line */
+/* Heart Line */
 
 .heartbeat{
 
-width:220px;
-height:50px;
-
+width:150px;
+height:30px;
 margin:auto;
 
 position:relative;
@@ -104,11 +103,11 @@ content:"";
 
 position:absolute;
 
-top:25px;
+top:15px;
 left:0;
 
 width:100%;
-height:3px;
+height:2px;
 
 
 background:
@@ -121,11 +120,10 @@ transparent
 
 
 box-shadow:
-0 0 15px #8cff3a;
+0 0 10px #8cff3a;
 
 
-animation:
-move 2s linear infinite;
+animation:move 2s linear infinite;
 
 }
 
@@ -134,63 +132,66 @@ move 2s linear infinite;
 @keyframes move{
 
 from{
-transform:translateX(-50px);
+transform:translateX(-30px);
 }
 
 to{
-transform:translateX(50px);
+transform:translateX(30px);
 }
 
 }
 
 
 
-
+/* Name */
 
 .brand-name{
 
-font-size:34px;
+font-size:23px;
 
 font-weight:800;
 
-margin-top:25px;
+margin-top:12px;
 
 color:#baff70;
 
 letter-spacing:1px;
 
 text-shadow:
-0 0 15px #8cff3a;
+0 0 10px #8cff3a;
 
 }
 
 
+
+/* Tagline */
 
 .tagline{
 
 color:#c5c5c5;
 
-font-size:16px;
+font-size:12px;
 
-line-height:1.7;
+line-height:1.5;
 
-margin-top:20px;
+margin-top:10px;
 
 }
 
 
 
+/* KNN Button */
 
 .knn{
 
 display:inline-block;
 
-margin-top:35px;
+margin-top:18px;
 
-padding:13px 45px;
+padding:8px 28px;
 
 
-border-radius:40px;
+border-radius:30px;
 
 
 background:
@@ -203,14 +204,14 @@ linear-gradient(
 
 color:#071000;
 
-font-size:20px;
+font-size:14px;
 
 font-weight:800;
 
 
 box-shadow:
 
-0 0 25px #8cff3a;
+0 0 15px #8cff3a;
 
 }
 
@@ -218,7 +219,7 @@ box-shadow:
 
 .bottom-line{
 
-margin-top:60px;
+margin-top:25px;
 
 height:1px;
 
@@ -233,23 +234,22 @@ transparent
 }
 
 
+
 .ai-text{
 
-font-size:13px;
+font-size:10px;
 
 color:#888;
 
-margin-top:20px;
+margin-top:10px;
 
 }
+
 
 </style>
 
 
-
-
 <div class="muskan-card">
-
 
 <div class="ai-logo">
 M
@@ -259,11 +259,9 @@ M
 <div class="heartbeat"></div>
 
 
-
 <div class="brand-name">
 MuskanNova AI
 </div>
-
 
 
 <div class="tagline">
@@ -274,13 +272,11 @@ Recommendation System
 </div>
 
 
-
 <div class="knn">
 
 Powered by KNN
 
 </div>
-
 
 
 <div class="bottom-line"></div>
@@ -294,7 +290,6 @@ Machine Learning • AI • Music Intelligence
 
 
 </div>
-
 
 """,unsafe_allow_html=True)
 with st.sidebar:
