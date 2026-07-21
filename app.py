@@ -173,7 +173,7 @@ if page == "🏠 Home":
         text-align:center;
         box-shadow:0px 5px 15px rgba(0,0,0,0.4);
     ">
-        <h1 style="color:white;">🎵 🎵 MuskanNova AI Dashboard</h1>
+        <h1 style="color:white;">🎵  Muskan Nova AI Dashboard</h1>
         <h3 style="color:#FFD700;">
             MuskanNova AI – Intelligent Music Recommendation System
         </h3>
