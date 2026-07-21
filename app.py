@@ -372,11 +372,7 @@ with st.sidebar:
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
 
-    # ================= Premium Banner =================
-    Aanchal, samajh gaya. Tumhe sirf proper indentation ke sath ready-to-paste code chahiye. Neeche wala code direct if page == "🏠 Home": ke baad paste karo. Isme indentation already set hai.
-
-if page == "🏠 Home":
-
+    # ================= Premium Banner ===============
     st.markdown("""
     <style>
 
