@@ -87,7 +87,7 @@ st.sidebar.markdown("""
 <div class="icon">🎧</div>
 
 <div class="name">
-<span>MuskanNova AI</span> 
+<span>Muskan Nova AI</span> 
 </div>
 
 <div class="line"></div>
@@ -175,7 +175,7 @@ if page == "🏠 Home":
     ">
         <h1 style="color:white;">🎵  Muskan Nova AI Dashboard</h1>
         <h3 style="color:#FFD700;">
-            MuskanNova AI – Intelligent Music Recommendation System
+            Muskan Nova AI – Intelligent Music Recommendation System
         </h3>
         <p style="color:white;">
             🎧 Discover • Analyze • Recommend • Enjoy
