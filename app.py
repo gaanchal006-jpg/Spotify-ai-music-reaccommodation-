@@ -20,125 +20,281 @@ scaler = joblib.load("spotify_scaler.pkl")
 # Load processed song dataset
 song_data = joblib.load("spotify_data.pkl")
 #---spotify image-----
-# ================= MUSKANNOVA AI SIDEBAR BRAND =================
+# ================= MUSKANNOVA AI PREMIUM SIDEBAR =================
 
 st.sidebar.markdown("""
 <style>
 
-.brand-card{
-    height:420px;
-    background:linear-gradient(180deg,#020617,#000000);
-    border-radius:28px;
-    border:1px solid rgba(150,255,80,0.35);
-    box-shadow:
-    0 0 25px rgba(120,255,50,0.25),
-    inset 0 0 20px rgba(255,255,255,0.05);
-    text-align:center;
-    padding:25px 15px;
-    margin-bottom:20px;
-}
-
-
-/* Nova Icon */
-.nova-logo{
-    font-size:90px;
-    font-weight:900;
-    font-family:Arial;
-    color:#c7ff70;
-    text-shadow:
-    0 0 10px #9cff57,
-    0 0 25px #67ff2e;
-    margin-top:20px;
-}
-
-
-.wave{
-    width:180px;
-    height:4px;
-    margin:15px auto;
-    background:linear-gradient(
-    90deg,
-    transparent,
-    #8cff45,
-    transparent
-    );
-    box-shadow:0 0 15px #8cff45;
-}
-
-
-.brand-title{
-    font-size:32px;
-    font-weight:800;
-    color:#baff78;
-    margin-top:25px;
-    letter-spacing:1px;
-}
-
-
-.subtitle{
-    color:#b7b7b7;
-    font-size:15px;
-    line-height:1.6;
-    margin-top:20px;
-}
-
-
-.knn-btn{
-    margin-top:35px;
-    background:linear-gradient(
-    90deg,
-    #6ee72f,
-    #b7ff5b
-    );
-    color:black;
-    font-size:20px;
-    font-weight:bold;
-    padding:12px 35px;
+.muskan-card{
+    background:
+    radial-gradient(circle at top,#18320d,#020617 45%,#000);
     border-radius:30px;
-    display:inline-block;
+    padding:25px 15px;
+    height:520px;
+    text-align:center;
+
+    border:1px solid rgba(150,255,70,.5);
+
     box-shadow:
-    0 0 20px rgba(120,255,50,.7);
+    0 0 30px rgba(120,255,50,.25),
+    inset 0 0 40px rgba(120,255,50,.08);
+
+    overflow:hidden;
 }
 
 
-.footer-line{
-    margin-top:55px;
-    height:1px;
-    background:#555;
+/* Main AI Logo */
+
+.ai-logo{
+    font-size:100px;
+    font-weight:900;
+
+    font-family:
+    'Arial Black',sans-serif;
+
+    color:#d7ff76;
+
+    margin-top:15px;
+
+    text-shadow:
+    0 0 8px #9cff3b,
+    0 0 25px #7cff00,
+    0 0 50px #43ff00;
+
+    animation:pulse 2s infinite;
 }
 
+
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+
+
+/* Heart Beat Line */
+
+.heartbeat{
+
+width:220px;
+height:50px;
+
+margin:auto;
+
+position:relative;
+
+}
+
+
+.heartbeat:before{
+
+content:"";
+
+position:absolute;
+
+top:25px;
+left:0;
+
+width:100%;
+height:3px;
+
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#8cff3a,
+transparent
+);
+
+
+box-shadow:
+0 0 15px #8cff3a;
+
+
+animation:
+move 2s linear infinite;
+
+}
+
+
+
+@keyframes move{
+
+from{
+transform:translateX(-50px);
+}
+
+to{
+transform:translateX(50px);
+}
+
+}
+
+
+
+
+
+.brand-name{
+
+font-size:34px;
+
+font-weight:800;
+
+margin-top:25px;
+
+color:#baff70;
+
+letter-spacing:1px;
+
+text-shadow:
+0 0 15px #8cff3a;
+
+}
+
+
+
+.tagline{
+
+color:#c5c5c5;
+
+font-size:16px;
+
+line-height:1.7;
+
+margin-top:20px;
+
+}
+
+
+
+
+.knn{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:13px 45px;
+
+
+border-radius:40px;
+
+
+background:
+linear-gradient(
+90deg,
+#63e62e,
+#c8ff73
+);
+
+
+color:#071000;
+
+font-size:20px;
+
+font-weight:800;
+
+
+box-shadow:
+
+0 0 25px #8cff3a;
+
+}
+
+
+
+.bottom-line{
+
+margin-top:60px;
+
+height:1px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#777,
+transparent
+);
+
+}
+
+
+.ai-text{
+
+font-size:13px;
+
+color:#888;
+
+margin-top:20px;
+
+}
 
 </style>
 
 
-<div class="brand-card">
 
-<div class="nova-logo">
+
+<div class="muskan-card">
+
+
+<div class="ai-logo">
 M
 </div>
 
-<div class="wave"></div>
+
+<div class="heartbeat"></div>
 
 
-<div class="brand-title">
+
+<div class="brand-name">
 MuskanNova AI
 </div>
 
 
-<div class="subtitle">
-MuskanNova AI – Intelligent Music<br>
+
+<div class="tagline">
+
+Intelligent Music<br>
 Recommendation System
+
 </div>
 
 
-<div class="knn-btn">
+
+<div class="knn">
+
 Powered by KNN
+
+</div>
+
+
+
+<div class="bottom-line"></div>
+
+
+<div class="ai-text">
+
+Machine Learning • AI • Music Intelligence
+
 </div>
 
 
-<div class="footer-line"></div>
-
 </div>
+
 
 """,unsafe_allow_html=True)
 with st.sidebar:
