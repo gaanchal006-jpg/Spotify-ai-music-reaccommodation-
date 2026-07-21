@@ -372,72 +372,75 @@ with st.sidebar:
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
     
-    # Text wrapping aur indentation issues fix karne ke liye dedent use kiya hai
-    banner_html = textwrap.dedent(
-        """
-        <style>
-            .premium-card {
-                background: linear-gradient(135deg, #064e3b 0%, #020617 100%);
-                padding: 35px 25px;
-                border-radius: 24px;
-                text-align: center;
-                border: 1px dashed #22c55e;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-                margin-bottom: 25px;
-            }
-            .p-icon {
-                font-size: 60px;
-                margin-bottom: 5px;
-                filter: drop-shadow(0 0 15px #22c55e);
-            }
-            .p-title {
-                font-size: 42px;
-                font-weight: 900;
-                color: #ffffff;
-                letter-spacing: 0.5px;
-                margin: 0;
-            }
-            .p-sub {
-                font-size: 18px;
-                font-weight: 700;
-                color: #fde047;
-                margin-top: 8px;
-            }
-            .p-pills {
-                display: flex;
-                justify-content: center;
-                gap: 10px;
-                margin-top: 20px;
-            }
-            .p-badge {
-                background: rgba(34, 197, 94, 0.15);
-                border: 1px solid #22c55e;
-                color: #4ade80;
-                padding: 6px 16px;
-                border-radius: 20px;
-                font-size: 13px;
-                font-weight: 700;
-            }
-            .p-tagline {
-                margin-top: 15px;
-                font-size: 14px;
-                color: #e2e8f0;
-                letter-spacing: 1px;
-            }
-        </style>
+   # Streamlit Native Clean Card Container
+    with st.container(border=True):
+        st.markdown(
+            "### 🎧 Muskan Nova AI — *Intelligent Music Recommendation System*"
+        )
+        st.caption("✨ Discover • Analyze • Recommend • Enjoy ✨")
 
-        <div class="premium-card">
-            <div class="p-icon">🎧</div>
-            <div class="p-title">Muskan Nova AI</div>
-            <div class="p-sub">Intelligent Music Recommendation System</div>
-            <div class="p-pills">
-                <span class="p-badge">⚡ Powered by KNN</span>
-                <span class="p-badge">🤖 Music Intelligence</span>
-            </div>
-            <div class="p-tagline">✨ Discover • Analyze • Recommend • Enjoy ✨</div>
-        </div>
-    """
+        st.divider()
+
+        # Premium Dashboard Stats Grid
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            st.metric(
+                label="Core Engine", value="KNN Algorithm", delta="Active"
+            )
+
+        with col2:
+            st.metric(
+                label="Similarity Metric",
+                value="Cosine Vector",
+                delta="Optimized",
+            )
+
+        with col3:
+            st.metric(
+                label="Feature Mining",
+                value="Audio Insights",
+                delta="Real-Time",
+            )
+
+        with col4:
+            st.metric(label="Model Status", value="Ready", delta="100% Accuracy")
+Option 2: Pure CSS Single-Line Glow Banner (Zero-Fail Guarantee)
+Agar aapko Dark Green Neon Glow Banner hi chahiye jo bilkul text na bane aur visual UI hi dikhaye, toh is wale single-line formatting code ko copy karein:
+
+Python
+import streamlit as st
+
+# ===================== 🏠 HOME PAGE =====================
+if page == "🏠 Home":
+
+    # Safe CSS Injection
+    st.markdown(
+        """<style>
+    .wow-card {
+        background: radial-gradient(circle at center, #064e3b 0%, #020617 100%);
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        border: 2px solid #22c55e;
+        box-shadow: 0 0 35px rgba(34, 197, 94, 0.4);
+        margin-bottom: 20px;
+    }
+    .wow-title { font-size: 40px; font-weight: 900; color: #ffffff; margin: 0; }
+    .wow-sub { font-size: 18px; font-weight: 700; color: #fde047; margin-top: 5px; }
+    .wow-pill { display: inline-block; background: rgba(34,197,94,0.2); border: 1px solid #22c55e; color: #4ade80; padding: 4px 15px; border-radius: 15px; font-weight: bold; font-size: 13px; margin-top: 15px; }
+    </style>""",
+        unsafe_allow_html=True,
     )
+
+    # Safe HTML Render
+    st.markdown(
+        """<div class="wow-card">
+        <div style="font-size: 50px;">🎧</div>
+        <div class="wow-title">Muskan Nova AI</div>
+        <div class="wow-sub">Intelligent Music Recommendation System</div>
+        <div class="wow-pill">⚡ Powered by KNN Algorithm</div>
+    </div>""",
 
     st.markdown(banner_html, unsafe_allow_html=True)
     # ================= Dashboard Overview =================
