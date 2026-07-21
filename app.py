@@ -373,25 +373,75 @@ with st.sidebar:
 if page == "🏠 Home":
 
     # ================= Premium Banner =================
+    Aanchal, samajh gaya. Tumhe sirf proper indentation ke sath ready-to-paste code chahiye. Neeche wala code direct if page == "🏠 Home": ke baad paste karo. Isme indentation already set hai.
+
+if page == "🏠 Home":
+
     st.markdown("""
-    <div style="
-        background:linear-gradient(90deg,#000000,#1DB954);
-        padding:30px;
-        border-radius:20px;
+    <style>
+
+    .main-card{
+        background: linear-gradient(135deg,#020617,#064e3b,#16a34a);
+        padding:40px;
+        border-radius:30px;
         text-align:center;
-        box-shadow:0px 5px 15px rgba(0,0,0,0.4);
-    ">
-        <h1 style="color:white;">🎵 Spotify AI Dashboard</h1>
-        <h3 style="color:#FFD700;">
-            Machine Learning Based Music Recommendation System
-        </h3>
-        <p style="color:white;">
-            🎧 Discover • Analyze • Recommend • Enjoy
-        </p>
+        border:1px solid #22c55e;
+        box-shadow:0 0 35px rgba(34,197,94,0.4);
+        margin-bottom:30px;
+    }
+
+    .icon-box{
+        font-size:70px;
+        margin-bottom:20px;
+        filter:drop-shadow(0 0 20px #22c55e);
+    }
+
+    .title{
+        font-size:48px;
+        font-weight:900;
+        color:white;
+        margin-bottom:15px;
+    }
+
+    .subtitle{
+        font-size:25px;
+        font-weight:800;
+        color:#fde047;
+    }
+
+    .tag{
+        margin-top:20px;
+        font-size:18px;
+        color:white;
+    }
+
+    </style>
+    """, unsafe_allow_html=True)
+
+
+    st.markdown("""
+    <div class="main-card">
+
+        <div class="icon-box">
+            🎧
+        </div>
+
+        <div class="title">
+            Muskan Nova AI
+        </div>
+
+        <div class="subtitle">
+            Intelligent Music Recommendation System
+        </div>
+
+        <div class="tag">
+            ✨ Discover • Analyze • Recommend • Enjoy ✨
+        </div>
+
     </div>
     """, unsafe_allow_html=True)
 
-    st.write("")
+
 
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
