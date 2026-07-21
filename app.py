@@ -26,8 +26,7 @@ st.sidebar.markdown("""
 <style>
 
 .muskan-card{
-  background:
-radial-gradient(circle at top,#18320d,#020617 45%,#000) !important;
+
     border-radius:18px;
     padding:10px 8px;
 
