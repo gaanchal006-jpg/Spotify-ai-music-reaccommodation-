@@ -372,119 +372,176 @@ with st.sidebar:
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
 
-    # ================= Premium Banner ===============
- 
-# Custom CSS for Premium Design
+  Bilkul! Ek Ultra-Premium, Modern Glassmorphic Dashboard UI ke saath CSS/JS animations aur glowing interactive cards add kar dete hain.
+
+Aapke Streamlit app ke 🏠 Home page ke liye niche ek Unique & Premium Card Layout diya gaya hai. Isme glowing badge, glowing line, hover effects, aur feature metrics/highlights bhi shamil hain:
+
+Python
+# ===================== 🏠 HOME PAGE =====================
+if page == "🏠 Home":
+
+    # Premium CSS & Styling
     st.markdown(
         """
     <style>
-    /* Main Container Card */
-    .main-card {
-        background: radial-gradient(135deg, rgba(22, 163, 74, 0.25) 0%, rgba(6, 78, 59, 0.6) 50%, rgba(2, 6, 23, 0.95) 100%);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        padding: 50px 30px;
-        border-radius: 28px;
+    /* Glassmorphic Main Hero Card */
+    .hero-card {
+        position: relative;
+        background: radial-gradient(125deg, rgba(34, 197, 94, 0.2) 0%, rgba(6, 78, 59, 0.5) 40%, rgba(2, 6, 23, 0.95) 100%);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 55px 35px;
+        border-radius: 32px;
         text-align: center;
-        border: 1px solid rgba(34, 197, 94, 0.4);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
-                    0 0 30px rgba(34, 197, 94, 0.25),
-                    inset 0 1px 1px rgba(255, 255, 255, 0.2);
-        margin-bottom: 30px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(34, 197, 94, 0.35);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7),
+                    0 0 50px rgba(34, 197, 94, 0.25),
+                    inset 0 1px 2px rgba(255, 255, 255, 0.25);
+        margin-bottom: 40px;
+        overflow: hidden;
     }
 
-    .main-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 
-                    0 0 45px rgba(34, 197, 94, 0.35);
-    }
-
-    /* Icon Glow */
-    .icon-box {
-        font-size: 80px;
-        margin-bottom: 10px;
+    /* Floating Glowing Vinyl Icon */
+    .hero-icon {
+        font-size: 85px;
         display: inline-block;
-        filter: drop-shadow(0 0 20px #22c55e);
-        animation: pulse 3s infinite ease-in-out;
+        filter: drop-shadow(0 0 30px rgba(34, 197, 94, 0.8));
+        animation: float 4s ease-in-out infinite;
     }
 
-    /* Gradient Title */
-    .title {
-        font-size: 52px;
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(5deg); }
+    }
+
+    /* Modern Gradient Title */
+    .hero-title {
+        font-size: 56px;
         font-weight: 900;
-        background: linear-gradient(135deg, #ffffff 0%, #22c55e 100%);
+        background: linear-gradient(135deg, #ffffff 20%, #4ade80 70%, #22c55e 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        letter-spacing: 1px;
-        margin-bottom: 8px;
+        letter-spacing: -1px;
+        margin-top: 10px;
+        margin-bottom: 5px;
     }
 
-    /* Subtitle */
-    .subtitle {
-        margin-top: 10px;
+    .hero-subtitle {
         font-size: 24px;
         font-weight: 700;
         color: #fde047;
-        text-shadow: 0 2px 10px rgba(253, 224, 71, 0.2);
+        text-shadow: 0 0 15px rgba(253, 224, 71, 0.3);
+        margin-bottom: 20px;
     }
 
-    /* Tagline */
-    .tag {
-        margin-top: 20px;
-        font-size: 17px;
-        color: #e2e8f0;
-        letter-spacing: 2px;
-        font-weight: 500;
-    }
-
-    /* Tech Badge */
-    .knn {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 6px 18px;
-        border-radius: 20px;
-        background: rgba(34, 197, 94, 0.15);
-        border: 1px solid rgba(34, 197, 94, 0.5);
+    /* Neon Pill Badge */
+    .algo-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 24px;
+        border-radius: 50px;
+        background: rgba(34, 197, 94, 0.12);
+        border: 1px solid rgba(34, 197, 94, 0.6);
+        color: #4ade80;
         font-size: 15px;
         font-weight: 700;
-        color: #4ade80;
-        letter-spacing: 1px;
-        box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.25);
     }
 
-    /* Divider */
-    .bottom-line {
-        height: 1px;
-        width: 60%;
-        margin: 25px auto;
+    .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #22c55e;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #22c55e;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(0.95); opacity: 0.7; }
+        50% { transform: scale(1.4); opacity: 1; }
+        100% { transform: scale(0.95); opacity: 0.7; }
+    }
+
+    /* Glowing Divider */
+    .glow-line {
+        height: 2px;
+        width: 50%;
+        margin: 30px auto;
         background: linear-gradient(90deg, transparent, #22c55e, transparent);
     }
 
-    /* Footer Text */
-    .ai-text {
-        font-size: 14px;
+    /* Feature Highlights Grid */
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .feature-item {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 16px;
+        border-radius: 18px;
+        transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+        background: rgba(34, 197, 94, 0.1);
+        border-color: rgba(34, 197, 94, 0.4);
+        transform: translateY(-3px);
+    }
+
+    .feature-item h4 {
+        color: #ffffff;
+        font-size: 16px;
+        margin: 0;
+        font-weight: 700;
+    }
+
+    .feature-item p {
         color: #94a3b8;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        font-weight: 600;
+        font-size: 12px;
+        margin: 4px 0 0 0;
     }
     </style>
     """,
         unsafe_allow_html=True,
     )
 
-    # HTML Layout
+    # Hero Banner HTML
     st.markdown(
         """
-    <div class="main-card">
-        <div class="icon-box">🎧</div>
-        <div class="title">Muskan Nova AI</div>
-        <div class="subtitle">Intelligent Music Recommendation System</div>
-        <div class="tag">✨ Discover • Analyze • Recommend • Enjoy ✨</div>
-        <div><span class="knn">Powered by KNN</span></div>
-        <div class="bottom-line"></div>
-        <div class="ai-text">Machine Learning • AI • Music Intelligence</div>
+    <div class="hero-card">
+        <div class="hero-icon">🎵</div>
+        <div class="hero-title">Muskan Nova AI</div>
+        <div class="hero-subtitle">Next-Gen Intelligent Music Engine</div>
+        
+        <div class="algo-badge">
+            <span class="pulse-dot"></span> KNN Recommendation Active
+        </div>
+
+        <div class="glow-line"></div>
+
+        <!-- Extra Unique Feature Cards inside Home Page -->
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h4>🎯 Smart Match</h4>
+                <p>Personalized Playlist Suggestions</p>
+            </div>
+            <div class="feature-item">
+                <h4>📊 Audio Analytics</h4>
+                <p>Deep ML Feature Insights</p>
+            </div>
+            <div class="feature-item">
+                <h4>⚡ Real-Time</h4>
+                <p>Instant Similarity Vectoring</p>
+            </div>
+        </div>
     </div>
     """,
         unsafe_allow_html=True,
