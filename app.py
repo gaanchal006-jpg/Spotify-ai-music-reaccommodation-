@@ -42,6 +42,10 @@ st.sidebar.markdown("""
     inset 0 0 20px rgba(120,255,50,.08);
 
     overflow:hidden;
+
+    .muskan-card{
+    margin-bottom:25px !important;
+}
 }
 
 
