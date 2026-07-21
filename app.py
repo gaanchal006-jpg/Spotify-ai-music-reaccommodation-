@@ -383,7 +383,7 @@ if page == "🏠 Home":
     <style>
 
     .main-card{
-        background:linear-gradient(135deg,#020617,#064e3b,#16a34a);
+        background: linear-gradient(135deg,#020617,#064e3b,#16a34a);
         padding:40px;
         border-radius:30px;
         text-align:center;
@@ -421,33 +421,28 @@ if page == "🏠 Home":
     """, unsafe_allow_html=True)
 
 
-    st.markdown( """
-      
-        <div class="main-card">
+    st.markdown("""
+    <div class="main-card">
 
-            <div class="icon-box">
-                🎧
-            </div>
-
-            <div class="title">
-                Muskan Nova AI
-            </div>
-
-            <div class="subtitle">
-                Intelligent Music Recommendation System
-            </div>
-
-            <div class="tag">
-                ✨ Discover • Analyze • Recommend • Enjoy ✨
-            </div>
-
+        <div class="icon-box">
+            🎧
         </div>
-        """,
-        unsafe_allow_html=True
-    )
 
+        <div class="title">
+            Muskan Nova AI
+        </div>
 
-    st.write("")
+        <div class="subtitle">
+            Intelligent Music Recommendation System
+        </div>
+
+        <div class="tag">
+            ✨ Discover • Analyze • Recommend • Enjoy ✨
+        </div>
+
+    </div>
+    """, unsafe_allow_html=True)
+
 
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
