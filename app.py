@@ -421,8 +421,8 @@ if page == "🏠 Home":
     """, unsafe_allow_html=True)
 
 
-    st.markdown(
-        """
+    st.markdown( """
+      
         <div class="main-card">
 
             <div class="icon-box">
