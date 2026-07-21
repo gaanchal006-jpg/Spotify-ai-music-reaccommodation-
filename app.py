@@ -42,6 +42,8 @@ st.sidebar.markdown("""
     inset 0 0 20px rgba(0,0,0,.8);
 
     margin-bottom:35px !important;
+      background:red !important;
+}
 }
 
 
