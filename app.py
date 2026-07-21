@@ -413,8 +413,7 @@ import streamlit as st
 
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-
-    # Safe CSS Injection
+# Safe CSS Injection
     st.markdown(
         """<style>
     .wow-card {
@@ -441,8 +440,8 @@ if page == "🏠 Home":
         <div class="wow-sub">Intelligent Music Recommendation System</div>
         <div class="wow-pill">⚡ Powered by KNN Algorithm</div>
     </div>""",
-
-    st.markdown(banner_html, unsafe_allow_html=True)
+        unsafe_allow_html=True,
+    )
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
 
