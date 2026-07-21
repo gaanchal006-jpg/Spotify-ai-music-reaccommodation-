@@ -371,10 +371,7 @@ with st.sidebar:
     
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-import textwrap
-import streamlit as st
-
-
+    
     # Text wrapping aur indentation issues fix karne ke liye dedent use kiya hai
     banner_html = textwrap.dedent(
         """
