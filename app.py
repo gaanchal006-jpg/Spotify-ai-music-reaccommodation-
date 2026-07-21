@@ -79,49 +79,77 @@ st.sidebar.markdown("""
     }
 }
 
+# ===================== PREMIUM BRAND CARD =====================
 
+st.sidebar.markdown("""
+<style>
+.brand-card{
+    background:linear-gradient(145deg,#0b1220,#111827,#020617);
+    border-radius:22px;
+    padding:22px;
+    text-align:center;
+    border:1px solid rgba(34,197,94,.35);
+    box-shadow:0 0 25px rgba(34,197,94,.30);
+    margin-bottom:18px;
+}
+
+.brand-title{
+    font-size:30px;
+    font-weight:800;
+    color:white;
+    margin-top:10px;
+    margin-bottom:2px;
+}
+
+.brand-sub{
+    font-size:17px;
+    color:#22c55e;
+    font-weight:600;
+}
+
+.brand-text{
+    color:#cbd5e1;
+    font-size:14px;
+    margin-top:12px;
+    line-height:1.6;
+}
+
+.brand-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 18px;
+    border-radius:30px;
+    background:#22c55e;
+    color:black;
+    font-weight:bold;
+    font-size:14px;
+}
 </style>
+""", unsafe_allow_html=True)
 
-<div class="brand">
+st.sidebar.markdown('<div class="brand-card">', unsafe_allow_html=True)
+st.sidebar.image("a_digital_graphic_design_of_a_branding_section_or.png", width=110)
 
-<div class="icon">🎧</div>
-
-<div class="name">
-<span></span> AI
-</div>Muskan Nova AI
-
-<div class="line"></div>
-
-<div class="tag">
-MuskanNova AI – Intelligent Music<br>
-Recommendation System
+st.sidebar.markdown("""
+<div class="brand-title">
+MuskanNova AI
 </div>
 
-<div class="badge">
-Powered by KNN
+<div class="brand-sub">
+Intelligent Music Recommendation
 </div>
 
+<div class="brand-text">
+AI Powered Music Discovery<br>
+Machine Learning Based System
+</div>
+
+<div class="brand-btn">
+Powered by Python + KNN
 </div>
 """, unsafe_allow_html=True)
-with st.sidebar:
 
-    st.markdown("""
-    <div style="
-        background:linear-gradient(135deg,#1DB954,red);
-        padding:18px;
-        border-radius:18px;
-        text-align:center;
-        margin-bottom:18px;
-    ">
-        <h2 style="color:white;">🤖 AI CONTROL PANEL</h2>
-        <p style="color:white;">
-        🟢 Model Status : Online<br>#current system status#==
-        🎵 Dataset : Loaded<br>#==dataset load#==
-        ⚡ Recommendation Engine : Active #model active or not #
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-
+st.sidebar.markdown("</div>", unsafe_allow_html=True)
     page = st.radio(
         "📌 Navigation",
         [
