@@ -20,92 +20,127 @@ scaler = joblib.load("spotify_scaler.pkl")
 # Load processed song dataset
 song_data = joblib.load("spotify_data.pkl")
 #---spotify image-----
+# ================= MUSKANNOVA AI SIDEBAR BRAND =================
+
 st.sidebar.markdown("""
 <style>
 
-.brand{
-    background:linear-gradient(135deg,#0f172a,#111827,#020617);
-    border-radius:18px;
-    padding:18px;
+.brand-card{
+    height:420px;
+    background:linear-gradient(180deg,#020617,#000000);
+    border-radius:28px;
+    border:1px solid rgba(150,255,80,0.35);
+    box-shadow:
+    0 0 25px rgba(120,255,50,0.25),
+    inset 0 0 20px rgba(255,255,255,0.05);
     text-align:center;
-    border:1px solid rgba(29,185,84,.35);
-    box-shadow:0 0 18px rgba(29,185,84,.25);
-    margin-bottom:15px;
+    padding:25px 15px;
+    margin-bottom:20px;
 }
 
-.icon{
-    font-size:42px;
-    animation: pulse 2s infinite;
+
+/* Nova Icon */
+.nova-logo{
+    font-size:90px;
+    font-weight:900;
+    font-family:Arial;
+    color:#c7ff70;
+    text-shadow:
+    0 0 10px #9cff57,
+    0 0 25px #67ff2e;
+    margin-top:20px;
 }
 
-.name{
-    font-size:24px;
+
+.wave{
+    width:180px;
+    height:4px;
+    margin:15px auto;
+    background:linear-gradient(
+    90deg,
+    transparent,
+    #8cff45,
+    transparent
+    );
+    box-shadow:0 0 15px #8cff45;
+}
+
+
+.brand-title{
+    font-size:32px;
     font-weight:800;
-    color:white;
-    margin-top:8px;
+    color:#baff78;
+    margin-top:25px;
     letter-spacing:1px;
 }
 
-.name span{
-    color:#1DB954;
+
+.subtitle{
+    color:#b7b7b7;
+    font-size:15px;
+    line-height:1.6;
+    margin-top:20px;
 }
 
-.tag{
-    margin-top:6px;
-    color:#94a3b8;
-    font-size:12px;
-}
 
-.line{
-    width:70%;
-    height:2px;
-    margin:12px auto;
-    background:linear-gradient(90deg,transparent,#1DB954,transparent);
-}
-
-.badge{
-    display:inline-block;
-    margin-top:8px;
-    background:#1DB954;
+.knn-btn{
+    margin-top:35px;
+    background:linear-gradient(
+    90deg,
+    #6ee72f,
+    #b7ff5b
+    );
     color:black;
-    padding:4px 12px;
-    border-radius:20px;
-    font-size:11px;
+    font-size:20px;
     font-weight:bold;
+    padding:12px 35px;
+    border-radius:30px;
+    display:inline-block;
+    box-shadow:
+    0 0 20px rgba(120,255,50,.7);
 }
-@keyframes pulse{
-    50%{
-        transform:scale(1.08);
-    }
+
+
+.footer-line{
+    margin-top:55px;
+    height:1px;
+    background:#555;
 }
 
 
 </style>
-st.image("https://raw.githubusercontent.com/USERNAME/REPO/main/MuskanNovaAI.png")
-style="
-width:120px;
-height:120px;
-object-fit:contain;
-margin-bottom:10px;
-">
 
-<div class="name">
-<span>MuskanNova</span> AI
+
+<div class="brand-card">
+
+<div class="nova-logo">
+M
 </div>
 
-<div class="line"></div>
+<div class="wave"></div>
 
-<div class="tag">
-Intelligent Music<br>
+
+<div class="brand-title">
+MuskanNova AI
+</div>
+
+
+<div class="subtitle">
+MuskanNova AI – Intelligent Music<br>
 Recommendation System
 </div>
 
-<div class="badge">
-Powered by KNN 🤖
+
+<div class="knn-btn">
+Powered by KNN
 </div>
 
+
+<div class="footer-line"></div>
+
 </div>
-""", unsafe_allow_html=True)
+
+""",unsafe_allow_html=True)
 with st.sidebar:
 
     st.markdown("""
