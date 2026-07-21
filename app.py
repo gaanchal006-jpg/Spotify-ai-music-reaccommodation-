@@ -372,53 +372,12 @@ with st.sidebar:
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
     
-   # Streamlit Native Clean Card Container
-    with st.container(border=True):
-        st.markdown(
-            "### 🎧 Muskan Nova AI — *Intelligent Music Recommendation System*"
-        )
-        st.caption("✨ Discover • Analyze • Recommend • Enjoy ✨")
-
-        st.divider()
-
-        # Premium Dashboard Stats Grid
-        col1, col2, col3, col4 = st.columns(4)
-
-        with col1:
-            st.metric(
-                label="Core Engine", value="KNN Algorithm", delta="Active"
-            )
-
-        with col2:
-            st.metric(
-                label="Similarity Metric",
-                value="Cosine Vector",
-                delta="Optimized",
-            )
-
-        with col3:
-            st.metric(
-                label="Feature Mining",
-                value="Audio Insights",
-                delta="Real-Time",
-            )
-
-        with col4:
-            st.metric(label="Model Status", value="Ready", delta="100% Accuracy")
-Option 2: Pure CSS Single-Line Glow Banner (Zero-Fail Guarantee)
-Agar aapko Dark Green Neon Glow Banner hi chahiye jo bilkul text na bane aur visual UI hi dikhaye, toh is wale single-line formatting code ko copy karein:
-
-Python
-import streamlit as st
-
-# ===================== 🏠 HOME PAGE =====================
-if page == "🏠 Home":
-# --- 1. Pure CSS for Glassmorphism & Interactive Elements ---
+# --- 1. Pure CSS Styling ---
     st.markdown(
         """<style>
-    /* Main Hero Banner with Soft Glow */
+    /* Hero Banner Container */
     .hero-box {
-        background: radial-gradient(135deg, rgba(6, 78, 59, 0.8) 0%, rgba(2, 6, 23, 0.95) 100%);
+        background: radial-gradient(135deg, rgba(6, 78, 59, 0.85) 0%, rgba(2, 6, 23, 0.98) 100%);
         backdrop-filter: blur(16px);
         padding: 35px 25px;
         border-radius: 24px;
@@ -428,7 +387,7 @@ if page == "🏠 Home":
         margin-bottom: 25px;
     }
 
-    /* Animated Title */
+    /* Main Title Gradient */
     .hero-title {
         font-size: 44px;
         font-weight: 900;
@@ -474,7 +433,7 @@ if page == "🏠 Home":
         100% { transform: scaleY(1.1); }
     }
 
-    /* Tech Pills */
+    /* Tech Badge */
     .tech-pill {
         display: inline-block;
         background: rgba(34, 197, 94, 0.15);
@@ -487,7 +446,7 @@ if page == "🏠 Home":
         margin-top: 10px;
     }
 
-    /* Premium Custom Button Styling */
+    /* Custom Premium Button Glow */
     div.stButton > button {
         background: linear-gradient(135deg, #16a34a 0%, #059669 100%) !important;
         color: #ffffff !important;
@@ -509,7 +468,7 @@ if page == "🏠 Home":
         unsafe_allow_html=True,
     )
 
-    # --- 2. HTML Visual Hero Card ---
+    # --- 2. Visual Banner ---
     st.markdown(
         """<div class="hero-box">
         <div class="eq-wave">
@@ -526,7 +485,7 @@ if page == "🏠 Home":
         unsafe_allow_html=True,
     )
 
-    # --- 3. Academic Analytics Grid (Teacher Highlight) ---
+    # --- 3. Academic Metrics ---
     st.markdown("##### 📊 **System Architecture Metrics**")
     m1, m2, m3, m4 = st.columns(4)
 
@@ -547,7 +506,7 @@ if page == "🏠 Home":
 
     st.markdown("---")
 
-    # --- 4. Interactive Premium CTA Button ---
+    # --- 4. Interactive Call To Action ---
     col_btn1, col_btn2, col_btn3 = st.columns([1, 2, 1])
     with col_btn2:
         if st.button("🚀 Explore Song Recommendations", use_container_width=True):
