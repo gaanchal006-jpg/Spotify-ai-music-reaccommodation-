@@ -371,91 +371,140 @@ with st.sidebar:
     
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-# Custom Compact & Compact CSS
+# Ultra-Unique & Compact Cyber-Music Style
     st.markdown(
         """
     <style>
-    /* Compact Main Container */
-    .compact-card {
+    /* Sleek Main Card */
+    .premium-banner {
         position: relative;
-        background: linear-gradient(135deg, rgba(6, 78, 59, 0.9) 0%, rgba(2, 6, 23, 1) 100%);
-        padding: 25px 20px; /* Reduced padding */
-        border-radius: 20px; /* Smaller border radius */
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(12px);
+        padding: 24px 20px;
+        border-radius: 20px;
         text-align: center;
-        border: 2px solid #22c55e; /* Thicker border for highlight */
-        box-shadow: 0 0 25px rgba(34, 197, 94, 0.4); /* Stronger glow */
-        margin-bottom: 20px;
-        overflow: hidden;
+        border: 1px solid rgba(34, 197, 94, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                    inset 0 0 15px rgba(34, 197, 94, 0.15);
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
     }
 
-    /* Small Animated Vinyl Icon */
-    .compact-icon {
-        font-size: 50px; /* Small icon */
-        margin-bottom: 8px;
-        display: inline-block;
-        filter: drop-shadow(0 0 10px #22c55e);
-        animation: spin 6s linear infinite; /* Unique subtle rotation */
-    }
-    
-    @keyframes spin {
-        100% { transform: rotate(360deg); }
+    /* Live Animated Equalizer Bars (Unique Element) */
+    .eq-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 4px;
+        height: 24px;
+        margin-bottom: 4px;
     }
 
-    /* Compact Title */
-    .compact-title {
-        font-size: 38px; /* Compact font size */
-        font-weight: 900;
-        background: linear-gradient(135deg, #ffffff 0%, #4ade80 100%);
+    .eq-bar {
+        width: 4px;
+        background: #22c55e;
+        border-radius: 4px;
+        box-shadow: 0 0 8px #22c55e;
+        animation: eqWave 1.2s ease-in-out infinite alternate;
+    }
+
+    .eq-bar:nth-child(1) { height: 40%; animation-delay: 0.1s; }
+    .eq-bar:nth-child(2) { height: 80%; animation-delay: 0.3s; }
+    .eq-bar:nth-child(3) { height: 100%; animation-delay: 0.5s; }
+    .eq-bar:nth-child(4) { height: 60%; animation-delay: 0.2s; }
+    .eq-bar:nth-child(5) { height: 90%; animation-delay: 0.4s; }
+
+    @keyframes eqWave {
+        0% { transform: scaleY(0.3); }
+        100% { transform: scaleY(1.1); }
+    }
+
+    /* Modern Title */
+    .banner-title {
+        font-size: 34px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: -0.5px;
+        margin: 0;
+        line-height: 1.1;
+    }
+
+    .banner-title span {
+        background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        letter-spacing: 0.5px;
-        margin-bottom: 2px;
     }
 
-    /* Subtitle (Small) */
-    .compact-subtitle {
-        font-size: 16px; /* Small font size */
+    /* Subtitle */
+    .banner-sub {
+        font-size: 14px;
+        font-weight: 600;
+        color: #cbd5e1;
+        letter-spacing: 0.5px;
+        margin: 0;
+    }
+
+    /* Glowing Badge Row */
+    .badge-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 6px;
+    }
+
+    .tech-tag {
+        font-size: 11px;
         font-weight: 700;
         color: #fde047;
-        margin-bottom: 15px;
+        background: rgba(253, 224, 71, 0.1);
+        border: 1px solid rgba(253, 224, 71, 0.3);
+        padding: 3px 10px;
+        border-radius: 12px;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
 
-    /* Highlighted Badge Line */
-    .badge-line {
-        display: inline-block;
-        margin-top: 5px;
-        padding: 5px 15px;
-        border-radius: 30px;
-        background: rgba(34, 197, 94, 0.15);
-        border: 1px solid rgba(34, 197, 94, 0.6);
-        color: #e2e8f0;
-        font-size: 13px;
-        font-weight: 600;
-        box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
-    }
-
-    /* Glowing Text Highlight */
-    .text-glow {
-        color: #4ade80;
+    .algo-tag {
+        font-size: 11px;
         font-weight: 700;
-        text-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+        color: #4ade80;
+        background: rgba(34, 197, 94, 0.12);
+        border: 1px solid rgba(34, 197, 94, 0.4);
+        padding: 3px 10px;
+        border-radius: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     </style>
     """,
         unsafe_allow_html=True,
     )
 
-    # Compact HTML Layout
+    # Clean HTML Code
     st.markdown(
         """
-    <div class="compact-card">
-        <div class="compact-icon">💿</div> <!-- Unique Vinyl Icon -->
-        <div class="compact-title">Muskan Nova AI</div>
-        <div class="compact-subtitle">Intelligent Music Engine</div>
-        <div class="badge-line">
-            Powered by <span class="text-glow">KNN</span> • Machine Learning AI
+    <div class="premium-banner">
+        <!-- Unique Equalizer Animation -->
+        <div class="eq-container">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+        </div>
+        
+        <!-- Clean Title & Subtitle -->
+        <div class="banner-title">Muskan Nova <span>AI</span></div>
+        <div class="banner-sub">Intelligent Music Recommendation System</div>
+        
+        <!-- Compact Highlights -->
+        <div class="badge-wrapper">
+            <span class="tech-tag">✨ Music Intelligence</span>
+            <span class="algo-tag">⚡ Powered by KNN</span>
         </div>
     </div>
     """,
