@@ -380,73 +380,36 @@ if page == "🏠 Home":
 
     st.markdown("""
     <style>
-
     .hero-card{
-
-        background:
-        linear-gradient(
-            135deg,
-            #020617,
-            #052e16 45%,
-            #16a34a
-        );
-
+        background:linear-gradient(135deg,#020617,#052e16,#16a34a);
         border-radius:25px;
-        padding:35px 25px;
+        padding:35px;
         text-align:center;
-
         border:1px solid rgba(34,197,94,0.5);
-
-        box-shadow:
-        0 0 30px rgba(34,197,94,0.35),
-        inset 0 0 30px rgba(255,255,255,0.08);
-
-        margin-bottom:25px;
+        box-shadow:0 0 30px rgba(34,197,94,0.35);
     }
-
-
-    .hero-title{
-
-        font-size:48px;
-        font-weight:900;
-
-        background:
-        linear-gradient(
-        90deg,
-        #ffffff,
-        #bbf7d0
-        );
-
-        -webkit-background-clip:text;
-        color:transparent;
-
-        letter-spacing:1px;
-    }
-
-
-    .hero-sub{
-
-        margin-top:15px;
-        font-size:26px;
-        font-weight:800;
-        color:#fde047;
-    }
-
-
-    .hero-tag{
-
-        margin-top:20px;
-        font-size:18px;
-        color:#ffffff;
-        font-weight:600;
-    }
-
 
     .ai-icon{
-
         font-size:55px;
-        filter:drop-shadow(0 0 15px #22c55e);
+    }
 
+    .hero-title{
+        font-size:48px;
+        font-weight:900;
+        color:white;
+    }
+
+    .hero-sub{
+        font-size:25px;
+        font-weight:800;
+        color:#fde047;
+        margin-top:15px;
+    }
+
+    .hero-tag{
+        color:white;
+        font-size:18px;
+        margin-top:20px;
     }
 
     </style>
@@ -455,23 +418,20 @@ if page == "🏠 Home":
     <div class="hero-card">
 
         <div class="ai-icon">
-        🎧
+            🎧
         </div>
 
         <div class="hero-title">
-        Muskan Nova AI Dashboard
+            Muskan Nova AI Dashboard
         </div>
-
 
         <div class="hero-sub">
-        Muskan Nova AI – Intelligent Music Recommendation System
+            Muskan Nova AI – Intelligent Music Recommendation System
         </div>
-
 
         <div class="hero-tag">
-        ✨ Discover • Analyze • Recommend • Enjoy ✨
+            ✨ Discover • Analyze • Recommend • Enjoy ✨
         </div>
-
 
     </div>
 
@@ -479,7 +439,6 @@ if page == "🏠 Home":
 
 
     st.write("")
-
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
 
