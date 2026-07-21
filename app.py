@@ -106,24 +106,6 @@ page = st.sidebar.radio(
         "🌟 Conclusion"
     ]
 )
-st.sidebar.markdown("</div>", unsafe_allow_html=True)
-    page = st.radio(
-        "📌 Navigation",
-        [
-            "🏠 Home",
-            "🎵 Songs",
-            "🎤 Artists",
-            "🏷 Genres",
-            "📊 Analytics",
-            "🏆 Top Charts",
-            "🤖 AI Prediction",
-            "❤️ Recommendation",
-           "🎧 AI Music Personality",
-            "🌟 Conclusion"
-        ]
-    )
-
-    st.markdown("---")
 
     st.markdown("""
     <div style="
