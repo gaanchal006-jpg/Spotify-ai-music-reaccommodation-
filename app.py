@@ -373,9 +373,6 @@ with st.sidebar:
 if page == "🏠 Home":
 
     # ================= Premium Banner =================
-    if page == "🏠 Home":
-
-    # ================= Premium Banner =================
     st.markdown("""
     <div style="
         background:linear-gradient(90deg,#000000,#1DB954);
