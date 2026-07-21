@@ -10,7 +10,7 @@ from sklearn.neighbors import NearestNeighbors
 # Import K-Nearest Neighbors algorithm for song recommendation
 
 # ---------------- LOAD DATA ---------------- #
-df = pd.read_csv(r"C:\Users\DELL\Downloads\spotify (2).csv")
+df = pd.read_csv("spotify (2).csv")
 
 # ================= LOAD KNN MODEL =================
 # Load trained KNN model
