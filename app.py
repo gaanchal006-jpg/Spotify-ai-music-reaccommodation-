@@ -26,6 +26,9 @@ st.sidebar.markdown("""
 <style>
 
 .muskan-card{
+    background: linear-gradient(135deg,#f3e8ff,#d8b4fe,#a855f7) !important;
+
+    color:#000000 !important;
 
     border-radius:18px;
     padding:10px 8px;
@@ -33,17 +36,26 @@ st.sidebar.markdown("""
     height:270px;
     text-align:center;
 
-    border:1px solid rgba(150,255,70,.5);
+    border:1px solid rgba(0,0,0,.2);
 
     box-shadow:
-    0 0 15px rgba(120,255,50,.25),
-    inset 0 0 20px rgba(0,0,0,.8);
+    0 0 15px rgba(168,85,247,.4),
+    inset 0 0 20px rgba(255,255,255,.3);
 
     margin-bottom:35px !important;
-   background: linear-gradient(135deg,#f3e8ff,#d8b4fe,#a855f7) !important;
 }
 
+/* Heading black */
+.muskan-card h1,
+.muskan-card h2,
+.muskan-card h3{
+    color:#000000 !important;
+}
 
+/* Paragraph text black */
+.muskan-card p{
+    color:#000000 !important;
+}
 
 /* AI Logo */
 
