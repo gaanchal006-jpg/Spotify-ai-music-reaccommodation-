@@ -106,8 +106,7 @@ page = st.sidebar.radio(
         "🌟 Conclusion"
     ]
 )
-
-    st.markdown("""
+st.markdown("""
     <div style="
         background:pink;
         padding:15px;
