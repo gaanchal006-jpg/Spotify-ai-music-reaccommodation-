@@ -371,142 +371,116 @@ with st.sidebar:
     
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-# Ultra-Unique & Compact Cyber-Music Style
+# Streamlit ke raw-text issue ko rokne ke liye clean CSS
     st.markdown(
-        """
-    <style>
-    /* Sleek Main Card */
-    .premium-banner {
-        position: relative;
-        background: rgba(15, 23, 42, 0.85);
-        backdrop-filter: blur(12px);
-        padding: 24px 20px;
-        border-radius: 20px;
-        text-align: center;
-        border: 1px solid rgba(34, 197, 94, 0.5);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
-                    inset 0 0 15px rgba(34, 197, 94, 0.15);
-        margin-bottom: 25px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
+"""<style>
+.premium-banner {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    padding: 22px 20px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(34, 197, 94, 0.15);
+    margin-bottom: 20px;
+}
 
-    /* Live Animated Equalizer Bars (Unique Element) */
-    .eq-container {
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        gap: 4px;
-        height: 24px;
-        margin-bottom: 4px;
-    }
+.eq-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    height: 22px;
+    margin-bottom: 6px;
+}
 
-    .eq-bar {
-        width: 4px;
-        background: #22c55e;
-        border-radius: 4px;
-        box-shadow: 0 0 8px #22c55e;
-        animation: eqWave 1.2s ease-in-out infinite alternate;
-    }
+.eq-bar {
+    width: 4px;
+    background: #22c55e;
+    border-radius: 4px;
+    box-shadow: 0 0 8px #22c55e;
+    animation: eqWave 1.2s ease-in-out infinite alternate;
+}
 
-    .eq-bar:nth-child(1) { height: 40%; animation-delay: 0.1s; }
-    .eq-bar:nth-child(2) { height: 80%; animation-delay: 0.3s; }
-    .eq-bar:nth-child(3) { height: 100%; animation-delay: 0.5s; }
-    .eq-bar:nth-child(4) { height: 60%; animation-delay: 0.2s; }
-    .eq-bar:nth-child(5) { height: 90%; animation-delay: 0.4s; }
+.eq-bar:nth-child(1) { height: 40%; animation-delay: 0.1s; }
+.eq-bar:nth-child(2) { height: 80%; animation-delay: 0.3s; }
+.eq-bar:nth-child(3) { height: 100%; animation-delay: 0.5s; }
+.eq-bar:nth-child(4) { height: 60%; animation-delay: 0.2s; }
+.eq-bar:nth-child(5) { height: 90%; animation-delay: 0.4s; }
 
-    @keyframes eqWave {
-        0% { transform: scaleY(0.3); }
-        100% { transform: scaleY(1.1); }
-    }
+@keyframes eqWave {
+    0% { transform: scaleY(0.3); }
+    100% { transform: scaleY(1.1); }
+}
 
-    /* Modern Title */
-    .banner-title {
-        font-size: 34px;
-        font-weight: 800;
-        color: #ffffff;
-        letter-spacing: -0.5px;
-        margin: 0;
-        line-height: 1.1;
-    }
+.banner-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 4px 0;
+    line-height: 1.1;
+}
 
-    .banner-title span {
-        background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+.title-highlight {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-    /* Subtitle */
-    .banner-sub {
-        font-size: 14px;
-        font-weight: 600;
-        color: #cbd5e1;
-        letter-spacing: 0.5px;
-        margin: 0;
-    }
+.banner-sub {
+    font-size: 14px;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
 
-    /* Glowing Badge Row */
-    .badge-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 6px;
-    }
+.badge-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
 
-    .tech-tag {
-        font-size: 11px;
-        font-weight: 700;
-        color: #fde047;
-        background: rgba(253, 224, 71, 0.1);
-        border: 1px solid rgba(253, 224, 71, 0.3);
-        padding: 3px 10px;
-        border-radius: 12px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+.tech-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #fde047;
+    background: rgba(253, 224, 71, 0.1);
+    border: 1px solid rgba(253, 224, 71, 0.3);
+    padding: 3px 10px;
+    border-radius: 12px;
+}
 
-    .algo-tag {
-        font-size: 11px;
-        font-weight: 700;
-        color: #4ade80;
-        background: rgba(34, 197, 94, 0.12);
-        border: 1px solid rgba(34, 197, 94, 0.4);
-        padding: 3px 10px;
-        border-radius: 12px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    </style>
-    """,
+.algo-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #4ade80;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+</style>""",
         unsafe_allow_html=True,
     )
 
-    # Clean HTML Code
-    st.markdown( """
-    <div class="premium-banner">
-        <!-- Unique Equalizer Animation -->
-        <div class="eq-container">
-            <div class="eq-bar"></div>
-            <div class="eq-bar"></div>
-            <div class="eq-bar"></div>
-            <div class="eq-bar"></div>
-            <div class="eq-bar"></div>
-        </div>
-        
-        <!-- Clean Title & Subtitle -->
-        <div class="banner-title">Muskan Nova <span>AI</span></div>
-        <div class="banner-sub">Intelligent Music Recommendation System</div>
-        
-        <!-- Compact Highlights -->
-        <div class="badge-wrapper">
-            <span class="tech-tag">✨ Music Intelligence</span>
-            <span class="algo-tag">⚡ Powered by KNN</span>
-        </div>
+    # Clean HTML ohne Leading Spaces
+    st.markdown(
+"""<div class="premium-banner">
+    <div class="eq-container">
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
     </div>
-    """,
+    <div class="banner-title">Muskan Nova <span class="title-highlight">AI</span></div>
+    <div class="banner-sub">Intelligent Music Recommendation System</div>
+    <div class="badge-wrapper">
+        <span class="tech-tag">✨ Music Intelligence</span>
+        <span class="algo-tag">⚡ Powered by KNN</span>
+    </div>
+</div>""",
         unsafe_allow_html=True,
     )
     # ================= Dashboard Overview =================
