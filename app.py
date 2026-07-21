@@ -530,6 +530,7 @@ if page == "🏠 Home":
     </div>
 
     """, unsafe_allow_html=True)
+    st.write("Home Page Working")
 
 
     # ================= Dashboard Overview =================
