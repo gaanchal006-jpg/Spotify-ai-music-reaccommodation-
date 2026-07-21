@@ -23,90 +23,127 @@ song_data = joblib.load("spotify_data.pkl")
 st.sidebar.markdown("""
 <style>
 
-.brand-card{
-    background:linear-gradient(145deg,#0b1220,#111827,#020617);
-    border-radius:20px;
-    padding:20px;
+.brand{
+    background:linear-gradient(135deg,#0f172a,#111827,#020617);
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+    border:1px solid rgba(29,185,84,.35);
+    box-shadow:0 0 18px rgba(29,185,84,.25);
+    margin-bottom:15px;
 }
 
-.brand-title{
-    font-size:30px;
+.icon{
+    font-size:42px;
+    animation: pulse 2s infinite;
+}
+
+.name{
+    font-size:24px;
     font-weight:800;
     color:white;
-    margin-top:10px;
-    margin-bottom:2px;
+    margin-top:8px;
+    letter-spacing:1px;
 }
 
-.brand-sub{
-    font-size:17px;
-    color:#22c55e;
-    font-weight:600;
+.name span{
+    color:#1DB954;
 }
 
-.brand-text{
-    color:#cbd5e1;
-    font-size:14px;
-    margin-top:12px;
-    line-height:1.6;
+.tag{
+    margin-top:6px;
+    color:#94a3b8;
+    font-size:12px;
 }
 
-.brand-btn{
+.line{
+    width:70%;
+    height:2px;
+    margin:12px auto;
+    background:linear-gradient(90deg,transparent,#1DB954,transparent);
+}
+
+.badge{
     display:inline-block;
-    margin-top:15px;
-    padding:8px 18px;
-    border-radius:30px;
-    background:#22c55e;
+    margin-top:8px;
+    background:#1DB954;
     color:black;
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:11px;
     font-weight:bold;
-    font-size:14px;
 }
+@keyframes pulse{
+    50%{
+        transform:scale(1.08);
+    }
+}
+
 
 </style>
+<img src="https://your-image-path/MuskanNovaAI.png" 
+style="
+width:120px;
+height:120px;
+object-fit:contain;
+margin-bottom:10px;
+">
+
+<div class="name">
+<span>MuskanNova</span> AI
+</div>
+
+<div class="line"></div>
+
+<div class="tag">
+Intelligent Music<br>
+Recommendation System
+</div>
+
+<div class="badge">
+Powered by KNN 🤖
+</div>
+
+</div>
 """, unsafe_allow_html=True)
+with st.sidebar:
 
-st.sidebar.markdown('<div class="brand-card">', unsafe_allow_html=True)
+    st.markdown("""
+    <div style="
+        background:linear-gradient(135deg,#1DB954,red);
+        padding:18px;
+        border-radius:18px;
+        text-align:center;
+        margin-bottom:18px;
+    ">
+        <h2 style="color:white;">🤖 AI CONTROL PANEL</h2>
+        <p style="color:white;">
+        🟢 Model Status : Online<br>#current system status#==
+        🎵 Dataset : Loaded<br>#==dataset load#==
+        ⚡ Recommendation Engine : Active #model active or not #
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
-st.sidebar.image("muskannova_logo.png", width=110)
+    page = st.radio(
+        "📌 Navigation",
+        [
+            "🏠 Home",
+            "🎵 Songs",
+            "🎤 Artists",
+            "🏷 Genres",
+            "📊 Analytics",
+            "🏆 Top Charts",
+            "🤖 AI Prediction",
+            "❤️ Recommendation",
+           "🎧 AI Music Personality",
+            "🌟 Conclusion"
+        ]
+    )
 
-st.sidebar.markdown("""
-<div class="brand-title">
-MuskanNova AI
-</div>
+    st.markdown("---")
 
-<div class="brand-sub">
-Intelligent Music Recommendation
-</div>
-
-<div class="brand-text">
-AI Powered Music Discovery<br>
-Machine Learning Based System
-</div>
-
-<div class="brand-btn">
-Powered by Python + KNN
-</div>
-""", unsafe_allow_html=True)
-
-st.sidebar.markdown("</div>", unsafe_allow_html=True)
-
-# ================= NAVIGATION =================
-
-page = st.sidebar.radio(
-    "📌 Navigation",
-    [
-        "🏠 Home",
-        "🎵 Songs",
-        "🎤 Artists",
-        "🏷 Genres",
-        "📊 Analytics",
-        "🏆 Top Charts",
-        "🤖 AI Prediction",
-        "❤️ Recommendation",
-        "🎧 AI Music Personality",
-        "🌟 Conclusion"
-    ]
-)
-st.markdown("""
+    st.markdown("""
     <div style="
         background:pink;
         padding:15px;
