@@ -380,62 +380,183 @@ if page == "🏠 Home":
 
     st.markdown("""
     <style>
+
     .hero-card{
-        background:linear-gradient(135deg,#020617,#052e16,#16a34a);
-        border-radius:25px;
-        padding:35px;
+        background:
+        radial-gradient(circle at top left,#22c55e33,transparent 35%),
+        linear-gradient(135deg,#020617,#052e16,#064e3b);
+
+        border-radius:30px;
+        padding:45px 30px;
         text-align:center;
-        border:1px solid rgba(34,197,94,0.5);
-        box-shadow:0 0 30px rgba(34,197,94,0.35);
+
+        border:1px solid rgba(34,197,94,0.45);
+
+        box-shadow:
+        0 0 40px rgba(34,197,94,0.35),
+        inset 0 0 40px rgba(255,255,255,0.05);
+
+        animation: glow 3s infinite alternate;
+
+        margin-bottom:30px;
     }
 
-    .ai-icon{
-        font-size:55px;
+
+    @keyframes glow{
+        from{
+            box-shadow:
+            0 0 20px rgba(34,197,94,0.25);
+        }
+
+        to{
+            box-shadow:
+            0 0 45px rgba(34,197,94,0.55);
+        }
     }
+
+
+    .music-icon{
+
+        font-size:70px;
+
+        background:
+        linear-gradient(90deg,#22c55e,#86efac);
+
+        border-radius:50%;
+
+        width:110px;
+        height:110px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        margin:auto;
+
+        box-shadow:
+        0 0 30px rgba(34,197,94,0.7);
+
+    }
+
 
     .hero-title{
-        font-size:48px;
-        font-weight:900;
-        color:white;
+
+        margin-top:25px;
+
+        font-size:52px;
+
+        font-weight:1000;
+
+        letter-spacing:2px;
+
+        background:
+        linear-gradient(
+        90deg,
+        #ffffff,
+        #86efac,
+        #22c55e
+        );
+
+        -webkit-background-clip:text;
+
+        color:transparent;
+
     }
+
+
 
     .hero-sub{
+
+        margin-top:18px;
+
         font-size:25px;
+
         font-weight:800;
+
         color:#fde047;
-        margin-top:15px;
+
     }
 
+
+
     .hero-tag{
-        color:white;
+
+        margin-top:22px;
+
         font-size:18px;
-        margin-top:20px;
+
+        color:#e2e8f0;
+
+        font-weight:600;
+
     }
+
+
+    .badge{
+
+        margin-top:25px;
+
+        display:inline-block;
+
+        padding:10px 25px;
+
+        border-radius:30px;
+
+        background:
+        rgba(34,197,94,0.15);
+
+        border:
+        1px solid rgba(34,197,94,0.5);
+
+        color:#86efac;
+
+        font-weight:700;
+
+    }
+
 
     </style>
 
 
+
     <div class="hero-card">
 
-        <div class="ai-icon">
-            🎧
+
+        <div class="music-icon">
+        🎧
         </div>
+
+
 
         <div class="hero-title">
-            Muskan Nova AI Dashboard
+        Muskan Nova AI
         </div>
+
+
 
         <div class="hero-sub">
-            Muskan Nova AI – Intelligent Music Recommendation System
+        Intelligent Music Recommendation System
         </div>
 
+
+
         <div class="hero-tag">
-            ✨ Discover • Analyze • Recommend • Enjoy ✨
+        ✨ Discover • Analyze • Recommend • Enjoy ✨
         </div>
+
+
+
+        <div class="badge">
+        🤖 Powered by Machine Learning + AI
+        </div>
+
+
 
     </div>
 
+
     """, unsafe_allow_html=True)
+
 
 
     st.write("")
