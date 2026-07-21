@@ -371,93 +371,96 @@ with st.sidebar:
     
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-# Custom Clean & Elegant CSS
+# Custom Compact & Compact CSS
     st.markdown(
         """
     <style>
-    .main-card {
-        background: linear-gradient(135deg, #064e3b 0%, #020617 100%);
-        padding: 50px 30px;
-        border-radius: 30px;
+    /* Compact Main Container */
+    .compact-card {
+        position: relative;
+        background: linear-gradient(135deg, rgba(6, 78, 59, 0.9) 0%, rgba(2, 6, 23, 1) 100%);
+        padding: 25px 20px; /* Reduced padding */
+        border-radius: 20px; /* Smaller border radius */
         text-align: center;
-        border: 1px solid #22c55e;
-        box-shadow: 0 10px 30px rgba(34, 197, 94, 0.25);
-        margin-bottom: 30px;
+        border: 2px solid #22c55e; /* Thicker border for highlight */
+        box-shadow: 0 0 25px rgba(34, 197, 94, 0.4); /* Stronger glow */
+        margin-bottom: 20px;
+        overflow: hidden;
     }
 
-    .icon-box {
-        font-size: 75px;
-        margin-bottom: 15px;
-        filter: drop-shadow(0 0 15px #22c55e);
+    /* Small Animated Vinyl Icon */
+    .compact-icon {
+        font-size: 50px; /* Small icon */
+        margin-bottom: 8px;
+        display: inline-block;
+        filter: drop-shadow(0 0 10px #22c55e);
+        animation: spin 6s linear infinite; /* Unique subtle rotation */
+    }
+    
+    @keyframes spin {
+        100% { transform: rotate(360deg); }
     }
 
-    .title {
-        font-size: 52px;
+    /* Compact Title */
+    .compact-title {
+        font-size: 38px; /* Compact font size */
         font-weight: 900;
-        color: #ffffff;
-        letter-spacing: 1px;
+        background: linear-gradient(135deg, #ffffff 0%, #4ade80 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
     }
 
-    .subtitle {
-        margin-top: 12px;
-        font-size: 25px;
+    /* Subtitle (Small) */
+    .compact-subtitle {
+        font-size: 16px; /* Small font size */
         font-weight: 700;
         color: #fde047;
-    }
-
-    .tag {
-        margin-top: 22px;
-        font-size: 17px;
-        color: #e2e8f0;
-        letter-spacing: 1.5px;
-    }
-
-    .knn {
-        display: inline-block;
-        margin-top: 22px;
-        padding: 6px 18px;
-        border-radius: 20px;
-        background: rgba(34, 197, 94, 0.15);
-        border: 1px solid #22c55e;
-        font-size: 18px;
-        font-weight: 700;
-        color: #4ade80;
-    }
-
-    .bottom-line {
-        height: 2px;
-        width: 60%;
-        margin: 25px auto;
-        background: #22c55e;
-    }
-
-    .ai-text {
-        font-size: 14px;
-        color: #cbd5e1;
+        margin-bottom: 15px;
+        text-transform: uppercase;
         letter-spacing: 1px;
+    }
+
+    /* Highlighted Badge Line */
+    .badge-line {
+        display: inline-block;
+        margin-top: 5px;
+        padding: 5px 15px;
+        border-radius: 30px;
+        background: rgba(34, 197, 94, 0.15);
+        border: 1px solid rgba(34, 197, 94, 0.6);
+        color: #e2e8f0;
+        font-size: 13px;
         font-weight: 600;
+        box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+    }
+
+    /* Glowing Text Highlight */
+    .text-glow {
+        color: #4ade80;
+        font-weight: 700;
+        text-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
     }
     </style>
     """,
         unsafe_allow_html=True,
     )
 
-    # Clean HTML Structure
+    # Compact HTML Layout
     st.markdown(
         """
-    <div class="main-card">
-        <div class="icon-box">🎧</div>
-        <div class="title">Muskan Nova AI</div>
-        <div class="subtitle">Intelligent Music Recommendation System</div>
-        <div class="tag">✨ Discover • Analyze • Recommend • Enjoy ✨</div>
-        <div><span class="knn">Powered by KNN</span></div>
-        <div class="bottom-line"></div>
-        <div class="ai-text">Machine Learning • AI • Music Intelligence</div>
+    <div class="compact-card">
+        <div class="compact-icon">💿</div> <!-- Unique Vinyl Icon -->
+        <div class="compact-title">Muskan Nova AI</div>
+        <div class="compact-subtitle">Intelligent Music Engine</div>
+        <div class="badge-line">
+            Powered by <span class="text-glow">KNN</span> • Machine Learning AI
+        </div>
     </div>
     """,
         unsafe_allow_html=True,
     )
-
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
 
