@@ -27,7 +27,7 @@ st.sidebar.markdown("""
 
 .muskan-card{
     background:
-    radial-gradient(circle at top,#18320d,#020617 45%,#000);
+    radial-gradient(circle at top,#18320d,#020617 45%,#000) !important;
 
     border-radius:18px;
     padding:10px 8px;
@@ -39,12 +39,9 @@ st.sidebar.markdown("""
 
     box-shadow:
     0 0 15px rgba(120,255,50,.25),
-    inset 0 0 20px rgba(120,255,50,.08);
+    inset 0 0 20px rgba(0,0,0,.8);
 
-    overflow:hidden;
-
-    margin-bottom:25px !important;
-}
+    margin-bottom:35px !important;
 }
 
 
