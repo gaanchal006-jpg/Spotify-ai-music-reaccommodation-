@@ -371,164 +371,78 @@ with st.sidebar:
     
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-# --- UNIQUE TECHNIQUE: Variables mein CSS aur HTML store karenge ---
-    
-    # 1. Custom CSS (Ultra Premium & Unique)
-    home_css = """
-<style>
-    /* Sabse pehle Streamlit ke standard borders hide karte hain visual clean look ke liye */
-    [data-testid="stVerticalBlock"] > div:has(div.premium-container) {
-        border: none;
-        box-shadow: none;
-        background: transparent;
-    }
+import textwrap
+import streamlit as st
 
-    /* Main Container with 3D Depth & Radial Glow */
-    .premium-container {
-        position: relative;
-        background: radial-gradient(circle at center, #064e3b 0%, #020617 100%);
-        padding: 50px 30px;
-        border-radius: 35px;
-        text-align: center;
-        border: 2px solid rgba(34, 197, 94, 0.4);
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8),
-                    inset 0 0 20px rgba(34, 197, 94, 0.2);
-        margin-bottom: 30px;
-        overflow: hidden; /* Bokeh effect ke liye */
-    }
 
-    /* Unique Feature 1: Neon Bokeh Particles (Pure CSS) */
-    .premium-container::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background-image: 
-            radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.1) 1%, transparent 2%),
-            radial-gradient(circle at 80% 80%, rgba(74, 222, 128, 0.1) 2%, transparent 3%),
-            radial-gradient(circle at 30% 60%, rgba(34, 197, 94, 0.15) 1%, transparent 2%);
-        animation: bokehFloat 15s linear infinite;
-        opacity: 0.6;
-    }
+    # Text wrapping aur indentation issues fix karne ke liye dedent use kiya hai
+    banner_html = textwrap.dedent(
+        """
+        <style>
+            .premium-card {
+                background: linear-gradient(135deg, #064e3b 0%, #020617 100%);
+                padding: 35px 25px;
+                border-radius: 24px;
+                text-align: center;
+                border: 1px dashed #22c55e;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+                margin-bottom: 25px;
+            }
+            .p-icon {
+                font-size: 60px;
+                margin-bottom: 5px;
+                filter: drop-shadow(0 0 15px #22c55e);
+            }
+            .p-title {
+                font-size: 42px;
+                font-weight: 900;
+                color: #ffffff;
+                letter-spacing: 0.5px;
+                margin: 0;
+            }
+            .p-sub {
+                font-size: 18px;
+                font-weight: 700;
+                color: #fde047;
+                margin-top: 8px;
+            }
+            .p-pills {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+            .p-badge {
+                background: rgba(34, 197, 94, 0.15);
+                border: 1px solid #22c55e;
+                color: #4ade80;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: 700;
+            }
+            .p-tagline {
+                margin-top: 15px;
+                font-size: 14px;
+                color: #e2e8f0;
+                letter-spacing: 1px;
+            }
+        </style>
 
-    @keyframes bokehFloat {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(10%); }
-    }
+        <div class="premium-card">
+            <div class="p-icon">🎧</div>
+            <div class="p-title">Muskan Nova AI</div>
+            <div class="p-sub">Intelligent Music Recommendation System</div>
+            <div class="p-pills">
+                <span class="p-badge">⚡ Powered by KNN</span>
+                <span class="p-badge">🤖 Music Intelligence</span>
+            </div>
+            <div class="p-tagline">✨ Discover • Analyze • Recommend • Enjoy ✨</div>
+        </div>
+    """
+    )
 
-    /* Unique Feature 2: High-Focus Pulse Icon */
-    .icon-box {
-        position: relative;
-        font-size: 85px;
-        margin-bottom: 10px;
-        display: inline-block;
-        color: #ffffff;
-        filter: drop-shadow(0 0 30px #22c55e);
-    }
-
-    /* Icon ke peeche active ripple effect */
-    .icon-box::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-color: transparent;
-        border-radius: 50%;
-        box-shadow: 0 0 10px #22c55e;
-        animation: iconRipple 2s infinite ease-out;
-    }
-
-    @keyframes iconRipple {
-        0% { transform: scale(1); opacity: 1; }
-        100% { transform: scale(1.5); opacity: 0; }
-    }
-
-    /* High-Gloss Gradient Title */
-    .title {
-        font-size: 56px;
-        font-weight: 900;
-        background: linear-gradient(135deg, #ffffff 10%, #22c55e 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        letter-spacing: -1px;
-        margin-bottom: 5px;
-    }
-
-    /* Subtitle with Glowing Accent */
-    .subtitle {
-        margin-top: 10px;
-        font-size: 24px;
-        font-weight: 700;
-        color: #fde047;
-        text-shadow: 0 0 15px rgba(253, 224, 71, 0.3);
-    }
-
-    /* Minimalist Space Saver Divider */
-    .bottom-line {
-        height: 1px;
-        width: 50%;
-        margin: 30px auto;
-        background: linear-gradient(90deg, transparent, #22c55e, transparent);
-        border: none;
-    }
-
-    /* Unique Feature 3: Compact Premium Pills (Side by Side) */
-    .premium-badges {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 25px;
-        margin-bottom: 10px;
-    }
-
-    .badge-item {
-        display: inline-block;
-        padding: 8px 18px;
-        border-radius: 20px;
-        border: 1px solid;
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-    }
-
-    .tag-knn {
-        background: rgba(34, 197, 94, 0.15);
-        border-color: #22c55e;
-        color: #4ade80;
-    }
-
-    .tag-ai {
-        background: rgba(255, 255, 255, 0.05);
-        border-color: rgba(255, 255, 255, 0.3);
-        color: #cbd5e1;
-    }
-</style>
-"""
-
-    # 2. Main Banner HTML
-    home_html = """
-<div class="premium-container">
-    <div class="icon-box">🎧</div>
-    <div class="title">Muskan Nova AI</div>
-    <div class="subtitle">Intelligent Music Recommendation System</div>
-    
-    <div class="premium-badges">
-        <span class="badge-item tag-knn">⚡ Powered by KNN</span>
-        <span class="badge-item tag-ai">Machine Learning • AI</span>
-    </div>
-
-    <div class="bottom-line"></div>
-    
-    <div style="font-size: 16px; color: white;">✨ Discover • Analyze • Recommend • Enjoy ✨</div>
-</div>
-"""
-
-    # --- Render Karenge (Visual Output) ---
-    st.markdown(home_css, unsafe_allow_html=True)
+    st.markdown(banner_html, unsafe_allow_html=True)
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
 
