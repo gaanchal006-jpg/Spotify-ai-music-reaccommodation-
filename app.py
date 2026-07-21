@@ -27,14 +27,13 @@ st.sidebar.markdown("""
 
 .muskan-card{
 
- .muskan-card{
-    background: linear-gradient(135deg,#f3e8ff,#d8b4fe,#a855f7) !important;
-  
-}
+    background: linear-gradient(
+        135deg,
+        #f3e8ff,
+        #d8b4fe,
+        #a855f7
+    ) !important;
 
-.muskan-card *{
-      color:#000 !important;
-}
     border-radius:18px;
 
     padding:18px 10px;
@@ -46,44 +45,17 @@ st.sidebar.markdown("""
     border:1px solid rgba(0,0,0,0.25);
 
     box-shadow:
-    0 0 20px rgba(168,85,247,0.45),
-    inset 0 0 25px rgba(255,255,255,0.35);
+    0 8px 25px rgba(168,85,247,0.35);
 
     margin-bottom:35px !important;
 
+    color:#000 !important;
 }
 
 
-/* Logo/Icon */
-.muskan-card .icon{
-    font-size:45px;
-    color:#000000 !important;
+.muskan-card *{
+    color:#000 !important;
 }
-
-
-/* Main Heading */
-.muskan-card h2{
-    color:#000000 !important;
-    font-size:24px;
-    font-weight:800;
-    margin-top:10px;
-}
-
-
-/* Description */
-.muskan-card p{
-    color:#111111 !important;
-    font-size:14px;
-    font-weight:600;
-}
-
-
-/* Small text */
-.muskan-card span{
-    color:#000000 !important;
-    font-weight:700;
-}
-
 /* AI Logo */
 
 .ai-logo{
