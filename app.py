@@ -23,66 +23,6 @@ song_data = joblib.load("spotify_data.pkl")
 st.sidebar.markdown("""
 <style>
 
-.brand{
-    background:linear-gradient(135deg,#0f172a,#111827,#020617);
-    border-radius:18px;
-    padding:18px;
-    text-align:center;
-    border:1px solid rgba(29,185,84,.35);
-    box-shadow:0 0 18px rgba(29,185,84,.25);
-    margin-bottom:15px;
-}
-
-.icon{
-    font-size:42px;
-    animation: pulse 2s infinite;
-}
-
-.name{
-    font-size:24px;
-    font-weight:800;
-    color:white;
-    margin-top:8px;
-    letter-spacing:1px;
-}
-
-.name span{
-    color:#1DB954;
-}
-
-.tag{
-    margin-top:6px;
-    color:#94a3b8;
-    font-size:12px;
-}
-
-.line{
-    width:70%;
-    height:2px;
-    margin:12px auto;
-    background:linear-gradient(90deg,transparent,#1DB954,transparent);
-}
-
-.badge{
-    display:inline-block;
-    margin-top:8px;
-    background:#1DB954;
-    color:black;
-    padding:4px 12px;
-    border-radius:20px;
-    font-size:11px;
-    font-weight:bold;
-}
-@keyframes pulse{
-    50%{
-        transform:scale(1.08);
-    }
-}
-
-# ===================== PREMIUM BRAND CARD =====================
-st.sidebar.markdown("""
-<style>
-
 .brand-card{
     background:linear-gradient(145deg,#0b1220,#111827,#020617);
     border-radius:20px;
@@ -124,7 +64,6 @@ st.sidebar.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
 st.sidebar.markdown('<div class="brand-card">', unsafe_allow_html=True)
 
 st.sidebar.image("muskannova_logo.png", width=110)
@@ -150,6 +89,23 @@ Powered by Python + KNN
 
 st.sidebar.markdown("</div>", unsafe_allow_html=True)
 
+# ================= NAVIGATION =================
+
+page = st.sidebar.radio(
+    "📌 Navigation",
+    [
+        "🏠 Home",
+        "🎵 Songs",
+        "🎤 Artists",
+        "🏷 Genres",
+        "📊 Analytics",
+        "🏆 Top Charts",
+        "🤖 AI Prediction",
+        "❤️ Recommendation",
+        "🎧 AI Music Personality",
+        "🌟 Conclusion"
+    ]
+)
 st.sidebar.markdown("</div>", unsafe_allow_html=True)
     page = st.radio(
         "📌 Navigation",
