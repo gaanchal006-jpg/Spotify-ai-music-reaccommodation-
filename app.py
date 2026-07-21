@@ -29,17 +29,17 @@ st.sidebar.markdown("""
     background:
     radial-gradient(circle at top,#18320d,#020617 45%,#000);
 
-    border-radius:22px;
-    padding:15px 10px;
+    border-radius:18px;
+    padding:10px 8px;
 
-    height:350px;
+    height:270px;
     text-align:center;
 
     border:1px solid rgba(150,255,70,.5);
 
     box-shadow:
-    0 0 20px rgba(120,255,50,.25),
-    inset 0 0 25px rgba(120,255,50,.08);
+    0 0 15px rgba(120,255,50,.25),
+    inset 0 0 20px rgba(120,255,50,.08);
 
     overflow:hidden;
 }
@@ -49,20 +49,21 @@ st.sidebar.markdown("""
 
 .ai-logo{
 
-    font-size:65px;
+    font-size:45px;
     font-weight:900;
 
     font-family:'Arial Black',sans-serif;
 
     color:#d7ff76;
 
-    margin-top:5px;
+    margin-top:0px;
 
     text-shadow:
     0 0 8px #9cff3b,
-    0 0 20px #7cff00;
+    0 0 15px #7cff00;
 
     animation:pulse 2s infinite;
+
 }
 
 
@@ -74,7 +75,7 @@ transform:scale(1);
 }
 
 50%{
-transform:scale(1.05);
+transform:scale(1.06);
 }
 
 100%{
@@ -84,12 +85,14 @@ transform:scale(1);
 }
 
 
-/* Heart Line */
+
+/* Heart Beat Line */
 
 .heartbeat{
 
-width:150px;
-height:30px;
+width:110px;
+height:22px;
+
 margin:auto;
 
 position:relative;
@@ -103,7 +106,7 @@ content:"";
 
 position:absolute;
 
-top:15px;
+top:10px;
 left:0;
 
 width:100%;
@@ -132,26 +135,26 @@ animation:move 2s linear infinite;
 @keyframes move{
 
 from{
-transform:translateX(-30px);
+transform:translateX(-25px);
 }
 
 to{
-transform:translateX(30px);
+transform:translateX(25px);
 }
 
 }
 
 
 
-/* Name */
+/* Brand Name */
 
 .brand-name{
 
-font-size:23px;
+font-size:18px;
 
 font-weight:800;
 
-margin-top:12px;
+margin-top:8px;
 
 color:#baff70;
 
@@ -170,11 +173,11 @@ text-shadow:
 
 color:#c5c5c5;
 
-font-size:12px;
+font-size:11px;
 
-line-height:1.5;
+line-height:1.3;
 
-margin-top:10px;
+margin-top:8px;
 
 }
 
@@ -186,9 +189,9 @@ margin-top:10px;
 
 display:inline-block;
 
-margin-top:18px;
+margin-top:12px;
 
-padding:8px 28px;
+padding:6px 20px;
 
 
 border-radius:30px;
@@ -204,7 +207,7 @@ linear-gradient(
 
 color:#071000;
 
-font-size:14px;
+font-size:12px;
 
 font-weight:800;
 
@@ -217,9 +220,11 @@ box-shadow:
 
 
 
+/* Bottom Line */
+
 .bottom-line{
 
-margin-top:25px;
+margin-top:15px;
 
 height:1px;
 
@@ -235,13 +240,15 @@ transparent
 
 
 
+/* Footer Text */
+
 .ai-text{
 
-font-size:10px;
+font-size:9px;
 
 color:#888;
 
-margin-top:10px;
+margin-top:8px;
 
 }
 
@@ -249,7 +256,9 @@ margin-top:10px;
 </style>
 
 
+
 <div class="muskan-card">
+
 
 <div class="ai-logo">
 M
@@ -259,9 +268,11 @@ M
 <div class="heartbeat"></div>
 
 
+
 <div class="brand-name">
 MuskanNova AI
 </div>
+
 
 
 <div class="tagline">
@@ -272,6 +283,7 @@ Recommendation System
 </div>
 
 
+
 <div class="knn">
 
 Powered by KNN
@@ -279,7 +291,9 @@ Powered by KNN
 </div>
 
 
+
 <div class="bottom-line"></div>
+
 
 
 <div class="ai-text">
@@ -291,7 +305,8 @@ Machine Learning • AI • Music Intelligence
 
 </div>
 
-""",unsafe_allow_html=True)
+
+""", unsafe_allow_html=True)
 with st.sidebar:
 
     st.markdown("""
