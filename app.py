@@ -82,13 +82,12 @@ st.sidebar.markdown("""
 # ===================== PREMIUM BRAND CARD =====================
 st.sidebar.markdown("""
 <style>
+
 .brand-card{
     background:linear-gradient(145deg,#0b1220,#111827,#020617);
     border-radius:20px;
     padding:20px;
 }
-</style>
-""", unsafe_allow_html=True)
 
 .brand-title{
     font-size:30px;
@@ -121,11 +120,14 @@ st.sidebar.markdown("""
     font-weight:bold;
     font-size:14px;
 }
+
 </style>
 """, unsafe_allow_html=True)
 
+
 st.sidebar.markdown('<div class="brand-card">', unsafe_allow_html=True)
-st.sidebar.image("a_digital_graphic_design_of_a_branding_section_or.png", width=110)
+
+st.sidebar.image("muskannova_logo.png", width=110)
 
 st.sidebar.markdown("""
 <div class="brand-title">
@@ -145,6 +147,8 @@ Machine Learning Based System
 Powered by Python + KNN
 </div>
 """, unsafe_allow_html=True)
+
+st.sidebar.markdown("</div>", unsafe_allow_html=True)
 
 st.sidebar.markdown("</div>", unsafe_allow_html=True)
     page = st.radio(
