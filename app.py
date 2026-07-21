@@ -43,7 +43,6 @@ st.sidebar.markdown("""
 
     overflow:hidden;
 
-    .muskan-card{
     margin-bottom:25px !important;
 }
 }
