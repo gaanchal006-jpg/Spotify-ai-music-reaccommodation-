@@ -491,29 +491,31 @@ if page == "🏠 Home":
     with m1:
         st.metric(label="Core Algorithm", value="KNN Classifier", delta="Active")
     with m2:
-        st.metric(
-            label="Distance Metric", value="Cosine Vector", delta="Optimized"
-        )
+        st.metric(label="Distance Metric", value="Cosine Vector", delta="Optimized")
     with m3:
-        st.metric(
-            label="Audio Features", value="Multi-Dimensional", delta="Analyzed"
-        )
+        st.metric(label="Audio Features", value="Multi-Dimensional", delta="Analyzed")
     with m4:
-        st.metric(
-            label="System Status", value="100% Operational", delta="Ready"
-        )
+        st.metric(label="System Status", value="100% Operational", delta="Ready")
 
     st.markdown("---")
 
-    # --- 4. Direct Navigation Button (Direct Recommendation Page Open) ---
+    # --- 4. Working Navigation Button ---
     col_btn1, col_btn2, col_btn3 = st.columns([1, 2, 1])
     with col_btn2:
         if st.button("🚀 Go to Recommendation Page", use_container_width=True):
-            # Target Page Redirect Logic
-            # Note: Agar aapke sidebar mein Recommendation page ka naam thoda alag hai
-            # (e.g., "🎵 Recommendation", "Recommendation"), to wahi exact string likhein.
-            st.session_state.page = "🎵 Recommend" 
+            st.session_state.page = "🎵 Recommend"
             st.rerun()
+
+
+# ===================== 🎵 RECOMMENDATION PAGE =====================
+elif page == "🎵 Recommend":
+    st.title("🎵 Music Recommendation Engine")
+    st.subheader("Select a song to get AI recommendations based on KNN Algorithm:")
+    
+    # Simple Example Selectbox
+    selected_song = st.selectbox("Choose a Song:", ["Song A", "Song B", "Song C"])
+    if st.button("Get Recommendations"):
+        st.success(f"Showing KNN recommendations for **{selected_song}**!")
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
 
