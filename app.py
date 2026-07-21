@@ -371,199 +371,88 @@ with st.sidebar:
     
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-# Custom Ultra-Premium CSS
+# Custom Clean & Elegant CSS
     st.markdown(
         """
     <style>
-    /* Main Hero Banner Container */
-    .hero-card {
-        background: radial-gradient(135deg, rgba(34, 197, 94, 0.25) 0%, rgba(6, 78, 59, 0.6) 45%, rgba(2, 6, 23, 0.98) 100%);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        padding: 55px 35px 45px 35px;
-        border-radius: 32px;
+    .main-card {
+        background: linear-gradient(135deg, #064e3b 0%, #020617 100%);
+        padding: 50px 30px;
+        border-radius: 30px;
         text-align: center;
-        border: 1px solid rgba(34, 197, 94, 0.45);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 
-                    0 0 40px rgba(34, 197, 94, 0.25),
-                    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+        border: 1px solid #22c55e;
+        box-shadow: 0 10px 30px rgba(34, 197, 94, 0.25);
         margin-bottom: 30px;
     }
 
-    /* Floating Animated Icon */
     .icon-box {
-        font-size: 85px;
-        margin-bottom: 10px;
-        display: inline-block;
-        filter: drop-shadow(0 0 25px rgba(34, 197, 94, 0.8));
-        animation: floatIcon 4s ease-in-out infinite;
+        font-size: 75px;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 0 15px #22c55e);
     }
 
-    @keyframes floatIcon {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-10px) rotate(4deg); }
-    }
-
-    /* Gradient Title */
     .title {
-        font-size: 54px;
+        font-size: 52px;
         font-weight: 900;
-        background: linear-gradient(135deg, #ffffff 10%, #4ade80 70%, #22c55e 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        letter-spacing: -0.5px;
-        margin-bottom: 6px;
+        color: #ffffff;
+        letter-spacing: 1px;
     }
 
-    /* Subtitle */
     .subtitle {
-        margin-top: 8px;
+        margin-top: 12px;
         font-size: 25px;
         font-weight: 700;
         color: #fde047;
-        text-shadow: 0 2px 12px rgba(253, 224, 71, 0.3);
     }
 
-    /* Tagline */
     .tag {
-        margin-top: 18px;
-        font-size: 16px;
+        margin-top: 22px;
+        font-size: 17px;
         color: #e2e8f0;
-        letter-spacing: 2px;
-        font-weight: 500;
-        text-transform: uppercase;
+        letter-spacing: 1.5px;
     }
 
-    /* Tech Pill Badge with Live Pulse */
-    .knn-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: 25px;
-        padding: 8px 22px;
-        border-radius: 30px;
+    .knn {
+        display: inline-block;
+        margin-top: 22px;
+        padding: 6px 18px;
+        border-radius: 20px;
         background: rgba(34, 197, 94, 0.15);
-        border: 1px solid rgba(34, 197, 94, 0.6);
-        font-size: 15px;
+        border: 1px solid #22c55e;
+        font-size: 18px;
         font-weight: 700;
         color: #4ade80;
-        letter-spacing: 1px;
-        box-shadow: 0 0 20px rgba(34, 197, 94, 0.25);
     }
 
-    .pulse-dot {
-        width: 9px;
-        height: 9px;
-        background-color: #22c55e;
-        border-radius: 50%;
-        box-shadow: 0 0 10px #22c55e;
-        animation: pulseAnimation 1.6s infinite ease-in-out;
-    }
-
-    @keyframes pulseAnimation {
-        0% { transform: scale(0.9); opacity: 0.6; }
-        50% { transform: scale(1.4); opacity: 1; }
-        100% { transform: scale(0.9); opacity: 0.6; }
-    }
-
-    /* Glowing Divider */
     .bottom-line {
-        height: 1px;
-        width: 55%;
-        margin: 30px auto 20px auto;
-        background: linear-gradient(90deg, transparent, #22c55e, transparent);
+        height: 2px;
+        width: 60%;
+        margin: 25px auto;
+        background: #22c55e;
     }
 
-    /* Footer Text */
     .ai-text {
-        font-size: 13px;
-        color: #94a3b8;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-
-    /* Metrics Grid for Project Highlights */
-    .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 15px;
-        margin-top: 10px;
-        margin-bottom: 25px;
-    }
-
-    .stat-card {
-        background: rgba(15, 23, 42, 0.6);
-        border: 1px solid rgba(34, 197, 94, 0.25);
-        padding: 18px 12px;
-        border-radius: 18px;
-        text-align: center;
-        transition: all 0.3s ease;
-    }
-
-    .stat-card:hover {
-        border-color: rgba(34, 197, 94, 0.6);
-        transform: translateY(-4px);
-        background: rgba(22, 163, 74, 0.12);
-    }
-
-    .stat-val {
-        font-size: 22px;
-        font-weight: 800;
-        color: #4ade80;
-    }
-
-    .stat-lbl {
-        font-size: 12px;
+        font-size: 14px;
         color: #cbd5e1;
-        margin-top: 4px;
-        font-weight: 500;
+        letter-spacing: 1px;
+        font-weight: 600;
     }
     </style>
     """,
         unsafe_allow_html=True,
     )
 
-    # Main Banner Layout
+    # Clean HTML Structure
     st.markdown(
         """
-    <div class="hero-card">
+    <div class="main-card">
         <div class="icon-box">🎧</div>
         <div class="title">Muskan Nova AI</div>
         <div class="subtitle">Intelligent Music Recommendation System</div>
         <div class="tag">✨ Discover • Analyze • Recommend • Enjoy ✨</div>
-        <div>
-            <span class="knn-badge">
-                <span class="pulse-dot"></span> Powered by KNN Algorithm
-            </span>
-        </div>
+        <div><span class="knn">Powered by KNN</span></div>
         <div class="bottom-line"></div>
         <div class="ai-text">Machine Learning • AI • Music Intelligence</div>
-    </div>
-    """,
-        unsafe_allow_html=True,
-    )
-
-    # Technical Overview Grid (Extra Impressive for Evaluation)
-    st.markdown(
-        """
-    <div class="stats-grid">
-        <div class="stat-card">
-            <div class="stat-val">K-Nearest</div>
-            <div class="stat-lbl">Core Recommendation Engine</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-val">Cosine</div>
-            <div class="stat-lbl">Similarity Metric Applied</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-val">Audio Vector</div>
-            <div class="stat-lbl">Multi-Feature Feature Extraction</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-val">Real-Time</div>
-            <div class="stat-lbl">Dynamic Track Matching</div>
-        </div>
     </div>
     """,
         unsafe_allow_html=True,
