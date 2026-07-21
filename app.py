@@ -374,101 +374,121 @@ if page == "🏠 Home":
 
     # ================= Premium Banner ===============
  
-
-    st.markdown("""
+# Custom CSS for Premium Design
+    st.markdown(
+        """
     <style>
-
-    .main-card{
-        background:radial-gradient(circle at top,#16a34a,#064e3b,#020617);
-        padding:45px;
-        border-radius:35px;
-        text-align:center;
-        border:1px solid rgba(34,197,94,0.8);
-        box-shadow:0 0 40px rgba(34,197,94,0.45);
-        margin-bottom:35px;
+    /* Main Container Card */
+    .main-card {
+        background: radial-gradient(135deg, rgba(22, 163, 74, 0.25) 0%, rgba(6, 78, 59, 0.6) 50%, rgba(2, 6, 23, 0.95) 100%);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 50px 30px;
+        border-radius: 28px;
+        text-align: center;
+        border: 1px solid rgba(34, 197, 94, 0.4);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
+                    0 0 30px rgba(34, 197, 94, 0.25),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        margin-bottom: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .icon-box{
-        font-size:75px;
-        margin-bottom:15px;
-        filter:drop-shadow(0 0 25px #22c55e);
+    .main-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 
+                    0 0 45px rgba(34, 197, 94, 0.35);
     }
 
-    .title{
-        font-size:50px;
-        font-weight:900;
-        color:white;
+    /* Icon Glow */
+    .icon-box {
+        font-size: 80px;
+        margin-bottom: 10px;
+        display: inline-block;
+        filter: drop-shadow(0 0 20px #22c55e);
+        animation: pulse 3s infinite ease-in-out;
     }
 
-    .subtitle{
-        margin-top:15px;
-        font-size:26px;
-        font-weight:800;
-        color:#fde047;
+    /* Gradient Title */
+    .title {
+        font-size: 52px;
+        font-weight: 900;
+        background: linear-gradient(135deg, #ffffff 0%, #22c55e 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
     }
 
-    .tag{
-        margin-top:25px;
-        font-size:18px;
-        color:white;
+    /* Subtitle */
+    .subtitle {
+        margin-top: 10px;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fde047;
+        text-shadow: 0 2px 10px rgba(253, 224, 71, 0.2);
     }
 
-    .knn{
-        margin-top:20px;
-        font-size:20px;
-        font-weight:700;
-        color:#22c55e;
+    /* Tagline */
+    .tag {
+        margin-top: 20px;
+        font-size: 17px;
+        color: #e2e8f0;
+        letter-spacing: 2px;
+        font-weight: 500;
     }
 
-    .ai-text{
-        margin-top:10px;
-        font-size:16px;
-        color:#cbd5e1;
+    /* Tech Badge */
+    .knn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 6px 18px;
+        border-radius: 20px;
+        background: rgba(34, 197, 94, 0.15);
+        border: 1px solid rgba(34, 197, 94, 0.5);
+        font-size: 15px;
+        font-weight: 700;
+        color: #4ade80;
+        letter-spacing: 1px;
+        box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
     }
 
-    .bottom-line{
-        height:2px;
-        width:70%;
-        margin:20px auto;
-        background:#22c55e;
+    /* Divider */
+    .bottom-line {
+        height: 1px;
+        width: 60%;
+        margin: 25px auto;
+        background: linear-gradient(90deg, transparent, #22c55e, transparent);
     }
 
+    /* Footer Text */
+    .ai-text {
+        font-size: 14px;
+        color: #94a3b8;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
     </style>
-    """, unsafe_allow_html=True)
+    """,
+        unsafe_allow_html=True,
+    )
 
-
-    st.markdown("""
+    # HTML Layout
+    st.markdown(
+        """
     <div class="main-card">
-
-        <div class="icon-box">
-            🎧
-        </div>
-
-        <div class="title">
-            Muskan Nova AI
-        </div>
-
-        <div class="subtitle">
-            Intelligent Music Recommendation System
-        </div>
-
-        <div class="tag">
-            ✨ Discover • Analyze • Recommend • Enjoy ✨
-        </div>
-
-        <div class="knn">
-            Powered by KNN
-        </div>
-
+        <div class="icon-box">🎧</div>
+        <div class="title">Muskan Nova AI</div>
+        <div class="subtitle">Intelligent Music Recommendation System</div>
+        <div class="tag">✨ Discover • Analyze • Recommend • Enjoy ✨</div>
+        <div><span class="knn">Powered by KNN</span></div>
         <div class="bottom-line"></div>
-
-        <div class="ai-text">
-            Machine Learning • AI • Music Intelligence
-        </div>
-
+        <div class="ai-text">Machine Learning • AI • Music Intelligence</div>
     </div>
-    """, unsafe_allow_html=True)
-
+    """,
+        unsafe_allow_html=True,
+    )
 
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
