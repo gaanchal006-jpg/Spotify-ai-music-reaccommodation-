@@ -371,168 +371,198 @@ with st.sidebar:
     
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-
-    # Premium CSS & Styling
+# Custom Ultra-Premium CSS
     st.markdown(
         """
     <style>
-    /* Glassmorphic Main Hero Card */
+    /* Main Hero Banner Container */
     .hero-card {
-        position: relative;
-        background: radial-gradient(125deg, rgba(34, 197, 94, 0.2) 0%, rgba(6, 78, 59, 0.5) 40%, rgba(2, 6, 23, 0.95) 100%);
+        background: radial-gradient(135deg, rgba(34, 197, 94, 0.25) 0%, rgba(6, 78, 59, 0.6) 45%, rgba(2, 6, 23, 0.98) 100%);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        padding: 55px 35px;
+        padding: 55px 35px 45px 35px;
         border-radius: 32px;
         text-align: center;
-        border: 1px solid rgba(34, 197, 94, 0.35);
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7),
-                    0 0 50px rgba(34, 197, 94, 0.25),
-                    inset 0 1px 2px rgba(255, 255, 255, 0.25);
-        margin-bottom: 40px;
-        overflow: hidden;
+        border: 1px solid rgba(34, 197, 94, 0.45);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 
+                    0 0 40px rgba(34, 197, 94, 0.25),
+                    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+        margin-bottom: 30px;
     }
 
-    /* Floating Glowing Vinyl Icon */
-    .hero-icon {
+    /* Floating Animated Icon */
+    .icon-box {
         font-size: 85px;
+        margin-bottom: 10px;
         display: inline-block;
-        filter: drop-shadow(0 0 30px rgba(34, 197, 94, 0.8));
-        animation: float 4s ease-in-out infinite;
+        filter: drop-shadow(0 0 25px rgba(34, 197, 94, 0.8));
+        animation: floatIcon 4s ease-in-out infinite;
     }
 
-    @keyframes float {
+    @keyframes floatIcon {
         0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-12px) rotate(5deg); }
+        50% { transform: translateY(-10px) rotate(4deg); }
     }
 
-    /* Modern Gradient Title */
-    .hero-title {
-        font-size: 56px;
+    /* Gradient Title */
+    .title {
+        font-size: 54px;
         font-weight: 900;
-        background: linear-gradient(135deg, #ffffff 20%, #4ade80 70%, #22c55e 100%);
+        background: linear-gradient(135deg, #ffffff 10%, #4ade80 70%, #22c55e 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        letter-spacing: -1px;
-        margin-top: 10px;
-        margin-bottom: 5px;
+        letter-spacing: -0.5px;
+        margin-bottom: 6px;
     }
 
-    .hero-subtitle {
-        font-size: 24px;
+    /* Subtitle */
+    .subtitle {
+        margin-top: 8px;
+        font-size: 25px;
         font-weight: 700;
         color: #fde047;
-        text-shadow: 0 0 15px rgba(253, 224, 71, 0.3);
-        margin-bottom: 20px;
+        text-shadow: 0 2px 12px rgba(253, 224, 71, 0.3);
     }
 
-    /* Neon Pill Badge */
-    .algo-badge {
+    /* Tagline */
+    .tag {
+        margin-top: 18px;
+        font-size: 16px;
+        color: #e2e8f0;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    /* Tech Pill Badge with Live Pulse */
+    .knn-badge {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 8px 24px;
-        border-radius: 50px;
-        background: rgba(34, 197, 94, 0.12);
+        margin-top: 25px;
+        padding: 8px 22px;
+        border-radius: 30px;
+        background: rgba(34, 197, 94, 0.15);
         border: 1px solid rgba(34, 197, 94, 0.6);
-        color: #4ade80;
         font-size: 15px;
         font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
+        color: #4ade80;
+        letter-spacing: 1px;
         box-shadow: 0 0 20px rgba(34, 197, 94, 0.25);
     }
 
     .pulse-dot {
-        width: 8px;
-        height: 8px;
+        width: 9px;
+        height: 9px;
         background-color: #22c55e;
         border-radius: 50%;
         box-shadow: 0 0 10px #22c55e;
-        animation: pulse 1.5s infinite;
+        animation: pulseAnimation 1.6s infinite ease-in-out;
     }
 
-    @keyframes pulse {
-        0% { transform: scale(0.95); opacity: 0.7; }
+    @keyframes pulseAnimation {
+        0% { transform: scale(0.9); opacity: 0.6; }
         50% { transform: scale(1.4); opacity: 1; }
-        100% { transform: scale(0.95); opacity: 0.7; }
+        100% { transform: scale(0.9); opacity: 0.6; }
     }
 
     /* Glowing Divider */
-    .glow-line {
-        height: 2px;
-        width: 50%;
-        margin: 30px auto;
+    .bottom-line {
+        height: 1px;
+        width: 55%;
+        margin: 30px auto 20px auto;
         background: linear-gradient(90deg, transparent, #22c55e, transparent);
     }
 
-    /* Feature Highlights Grid */
-    .feature-grid {
+    /* Footer Text */
+    .ai-text {
+        font-size: 13px;
+        color: #94a3b8;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    /* Metrics Grid for Project Highlights */
+    .stats-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 15px;
-        margin-top: 25px;
+        margin-top: 10px;
+        margin-bottom: 25px;
     }
 
-    .feature-item {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 16px;
+    .stat-card {
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(34, 197, 94, 0.25);
+        padding: 18px 12px;
         border-radius: 18px;
+        text-align: center;
         transition: all 0.3s ease;
     }
 
-    .feature-item:hover {
-        background: rgba(34, 197, 94, 0.1);
-        border-color: rgba(34, 197, 94, 0.4);
-        transform: translateY(-3px);
+    .stat-card:hover {
+        border-color: rgba(34, 197, 94, 0.6);
+        transform: translateY(-4px);
+        background: rgba(22, 163, 74, 0.12);
     }
 
-    .feature-item h4 {
-        color: #ffffff;
-        font-size: 16px;
-        margin: 0;
-        font-weight: 700;
+    .stat-val {
+        font-size: 22px;
+        font-weight: 800;
+        color: #4ade80;
     }
 
-    .feature-item p {
-        color: #94a3b8;
+    .stat-lbl {
         font-size: 12px;
-        margin: 4px 0 0 0;
+        color: #cbd5e1;
+        margin-top: 4px;
+        font-weight: 500;
     }
     </style>
     """,
         unsafe_allow_html=True,
     )
 
-    # Hero Banner HTML
+    # Main Banner Layout
     st.markdown(
         """
     <div class="hero-card">
-        <div class="hero-icon">🎵</div>
-        <div class="hero-title">Muskan Nova AI</div>
-        <div class="hero-subtitle">Next-Gen Intelligent Music Engine</div>
-        
-        <div class="algo-badge">
-            <span class="pulse-dot"></span> KNN Recommendation Active
+        <div class="icon-box">🎧</div>
+        <div class="title">Muskan Nova AI</div>
+        <div class="subtitle">Intelligent Music Recommendation System</div>
+        <div class="tag">✨ Discover • Analyze • Recommend • Enjoy ✨</div>
+        <div>
+            <span class="knn-badge">
+                <span class="pulse-dot"></span> Powered by KNN Algorithm
+            </span>
         </div>
+        <div class="bottom-line"></div>
+        <div class="ai-text">Machine Learning • AI • Music Intelligence</div>
+    </div>
+    """,
+        unsafe_allow_html=True,
+    )
 
-        <div class="glow-line"></div>
-
-        <!-- Extra Unique Feature Cards inside Home Page -->
-        <div class="feature-grid">
-            <div class="feature-item">
-                <h4>🎯 Smart Match</h4>
-                <p>Personalized Playlist Suggestions</p>
-            </div>
-            <div class="feature-item">
-                <h4>📊 Audio Analytics</h4>
-                <p>Deep ML Feature Insights</p>
-            </div>
-            <div class="feature-item">
-                <h4>⚡ Real-Time</h4>
-                <p>Instant Similarity Vectoring</p>
-            </div>
+    # Technical Overview Grid (Extra Impressive for Evaluation)
+    st.markdown(
+        """
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-val">K-Nearest</div>
+            <div class="stat-lbl">Core Recommendation Engine</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-val">Cosine</div>
+            <div class="stat-lbl">Similarity Metric Applied</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-val">Audio Vector</div>
+            <div class="stat-lbl">Multi-Feature Feature Extraction</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-val">Real-Time</div>
+            <div class="stat-lbl">Dynamic Track Matching</div>
         </div>
     </div>
     """,
