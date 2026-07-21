@@ -371,54 +371,54 @@ with st.sidebar:
     
 # ===================== 🏠 HOME PAGE =====================
 if page == "🏠 Home":
-# --- 1. Pure CSS Styling ---
+# --- 1. Pure Premium CSS ---
     st.markdown(
         """<style>
-    /* Hero Banner Container */
+    /* Ultra Premium Glowing Hero Box */
     .hero-box {
-        background: radial-gradient(135deg, rgba(6, 78, 59, 0.85) 0%, rgba(2, 6, 23, 0.98) 100%);
-        backdrop-filter: blur(16px);
-        padding: 35px 25px;
+        background: radial-gradient(135deg, rgba(6, 78, 59, 0.9) 0%, rgba(2, 6, 23, 0.98) 100%);
+        backdrop-filter: blur(20px);
+        padding: 40px 25px;
         border-radius: 24px;
         text-align: center;
-        border: 1px solid rgba(34, 197, 94, 0.5);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(34, 197, 94, 0.2);
-        margin-bottom: 25px;
+        border: 1.5px solid rgba(34, 197, 94, 0.6);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(34, 197, 94, 0.25);
+        margin-bottom: 30px;
     }
 
-    /* Main Title Gradient */
+    /* Glowing Gradient Title */
     .hero-title {
-        font-size: 44px;
+        font-size: 46px;
         font-weight: 900;
-        background: linear-gradient(135deg, #ffffff 20%, #4ade80 100%);
+        background: linear-gradient(135deg, #ffffff 30%, #4ade80 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin: 5px 0;
+        margin: 8px 0;
         letter-spacing: -0.5px;
     }
 
-    /* Subtitle Accent */
+    /* Golden Accent Subtitle */
     .hero-sub {
-        font-size: 18px;
+        font-size: 19px;
         font-weight: 700;
         color: #fde047;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
     }
 
-    /* Live Equalizer Animation */
+    /* Animated Live Audio Equalizer Wave */
     .eq-wave {
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        gap: 5px;
-        height: 22px;
-        margin-bottom: 10px;
+        gap: 6px;
+        height: 26px;
+        margin-bottom: 12px;
     }
     .eq-bar {
-        width: 4px;
+        width: 5px;
         background: #22c55e;
-        border-radius: 3px;
-        box-shadow: 0 0 8px #22c55e;
+        border-radius: 4px;
+        box-shadow: 0 0 10px #22c55e;
         animation: wave 1.2s ease-in-out infinite alternate;
     }
     .eq-bar:nth-child(1) { height: 40%; animation-delay: 0.1s; }
@@ -432,42 +432,23 @@ if page == "🏠 Home":
         100% { transform: scaleY(1.1); }
     }
 
-    /* Tech Badge */
+    /* Modern AI Tech Pill */
     .tech-pill {
         display: inline-block;
         background: rgba(34, 197, 94, 0.15);
         border: 1px solid rgba(34, 197, 94, 0.5);
         color: #4ade80;
-        padding: 5px 16px;
+        padding: 6px 18px;
         border-radius: 20px;
         font-size: 13px;
         font-weight: 700;
-        margin-top: 10px;
-    }
-
-    /* Custom Premium Button Glow */
-    div.stButton > button {
-        background: linear-gradient(135deg, #16a34a 0%, #059669 100%) !important;
-        color: #ffffff !important;
-        font-size: 18px !important;
-        font-weight: 800 !important;
-        padding: 12px 30px !important;
-        border-radius: 30px !important;
-        border: 1px solid #4ade80 !important;
-        box-shadow: 0 0 20px rgba(34, 197, 94, 0.4) !important;
-        transition: all 0.3s ease !important;
-        width: 100% !important;
-    }
-    div.stButton > button:hover {
-        transform: translateY(-2px) scale(1.01) !important;
-        box-shadow: 0 0 30px rgba(34, 197, 94, 0.7) !important;
-        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+        letter-spacing: 0.5px;
     }
     </style>""",
         unsafe_allow_html=True,
     )
 
-    # --- 2. Visual Banner ---
+    # --- 2. WOW Hero Banner Container ---
     st.markdown(
         """<div class="hero-box">
         <div class="eq-wave">
@@ -479,43 +460,29 @@ if page == "🏠 Home":
         </div>
         <div class="hero-title">Muskan Nova AI</div>
         <div class="hero-sub">Intelligent Music Recommendation System</div>
-        <div class="tech-pill">⚡ Powered by KNN Algorithm • Multi-Feature Audio Engine</div>
+        <div class="tech-pill">⚡ Powered by KNN Algorithm • Cosine Distance Engine</div>
     </div>""",
         unsafe_allow_html=True,
     )
 
-    # --- 3. Academic Metrics ---
-    st.markdown("##### 📊 **System Architecture Metrics**")
+    # --- 3. Academic Live System Metrics ---
+    st.markdown("##### 📊 **System Architecture Overview**")
     m1, m2, m3, m4 = st.columns(4)
 
     with m1:
-        st.metric(label="Core Algorithm", value="KNN Classifier", delta="Active")
+        st.metric(label="Core Algorithm", value="KNN Model", delta="Active (k=5)")
     with m2:
-        st.metric(label="Distance Metric", value="Cosine Vector", delta="Optimized")
+        st.metric(
+            label="Similarity Metric", value="Cosine Vector", delta="Optimal"
+        )
     with m3:
-        st.metric(label="Audio Features", value="Multi-Dimensional", delta="Analyzed")
+        st.metric(
+            label="Audio Mining", value="Multi-Feature", delta="Analyzed"
+        )
     with m4:
-        st.metric(label="System Status", value="100% Operational", delta="Ready")
-
-    st.markdown("---")
-
-    # --- 4. Working Navigation Button ---
-    col_btn1, col_btn2, col_btn3 = st.columns([1, 2, 1])
-    with col_btn2:
-        if st.button("🚀 Go to Recommendation Page", use_container_width=True):
-            st.session_state.page = "🎵 Recommend"
-            st.rerun()
-
-
-# ===================== 🎵 RECOMMENDATION PAGE =====================
-elif page == "🎵 Recommend":
-    st.title("🎵 Music Recommendation Engine")
-    st.subheader("Select a song to get AI recommendations based on KNN Algorithm:")
-    
-    # Simple Example Selectbox
-    selected_song = st.selectbox("Choose a Song:", ["Song A", "Song B", "Song C"])
-    if st.button("Get Recommendations"):
-        st.success(f"Showing KNN recommendations for **{selected_song}**!")
+        st.metric(
+            label="System Status", value="100% Ready", delta="Operational"
+        )
     # ================= Dashboard Overview =================
     st.subheader("📊 Dashboard Overview")
 
