@@ -1,32 +1,129 @@
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import plotly.express as px
-import joblib
-import random
-import urllib.parse
+import streamlit as st # Import Streamlit library to create the web application
+import pandas as pd # Import Streamlit library to create the web application
+import matplotlib.pyplot as plt # Import Matplotlib for basic charts and graph
+import plotly.express as px # Import Plotly Express for interactive visualizations
+import joblib# Import Joblib to load saved Machine Learning models
+import random # Import Random library to generate random predictions and songs
+import urllib.parse # Import urllib.parse to encode song names inside URLs
 # ===================== ❤️ RECOMMENDATION PAGE (ULTIMATE PRO ML DASHBOARD) =====================
-from sklearn.neighbors import NearestNeighbors
+from sklearn.neighbors import NearestNeighbors 
+# Import K-Nearest Neighbors algorithm for song recommendation
 
 # ---------------- LOAD DATA ---------------- #
-df = pd.read_csv("spotify (2).csv")
+df = pd.read_csv(r"C:\Users\DELL\Downloads\spotify (2).csv")
 
 # ================= LOAD KNN MODEL =================
-
+# Load trained KNN model
 knn = joblib.load("spotify_knn.pkl")
+# Load StandardScaler used during training covert value small scale
 scaler = joblib.load("spotify_scaler.pkl")
+# Load processed song dataset
 song_data = joblib.load("spotify_data.pkl")
 #---spotify image-----
-st.sidebar.image(
-"https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
-width=125
-)
-#--sidebar title----
+st.sidebar.markdown("""
+<style>
+
+.brand{
+    background:linear-gradient(135deg,#0f172a,#111827,#020617);
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+    border:1px solid rgba(29,185,84,.35);
+    box-shadow:0 0 18px rgba(29,185,84,.25);
+    margin-bottom:15px;
+}
+
+.icon{
+    font-size:42px;
+    animation: pulse 2s infinite;
+}
+
+.name{
+    font-size:24px;
+    font-weight:800;
+    color:white;
+    margin-top:8px;
+    letter-spacing:1px;
+}
+
+.name span{
+    color:#1DB954;
+}
+
+.tag{
+    margin-top:6px;
+    color:#94a3b8;
+    font-size:12px;
+}
+
+.line{
+    width:70%;
+    height:2px;
+    margin:12px auto;
+    background:linear-gradient(90deg,transparent,#1DB954,transparent);
+}
+
+.badge{
+    display:inline-block;
+    margin-top:8px;
+    background:#1DB954;
+    color:black;
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+}
+@keyframes pulse{
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+
+</style>
+
+<div class="brand">
+
+<div class="icon">🎧</div>
+
+<div class="name">
+<span>Spotify</span> AI
+</div>
+
+<div class="line"></div>
+
+<div class="tag">
+Machine Learning Music<br>
+Recommendation System
+</div>
+
+<div class="badge">
+Powered by KNN
+</div>
+
+</div>
+""", unsafe_allow_html=True)
 with st.sidebar:
-    st.title("🎵 Spotify AI")
+
+    st.markdown("""
+    <div style="
+        background:linear-gradient(135deg,#1DB954,red);
+        padding:18px;
+        border-radius:18px;
+        text-align:center;
+        margin-bottom:18px;
+    ">
+        <h2 style="color:white;">🤖 AI CONTROL PANEL</h2>
+        <p style="color:white;">
+        🟢 Model Status : Online<br>#current system status#==
+        🎵 Dataset : Loaded<br>#==dataset load#==
+        ⚡ Recommendation Engine : Active #model active or not #
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
     page = st.radio(
-        "Navigation",
+        "📌 Navigation",
         [
             "🏠 Home",
             "🎵 Songs",
@@ -35,69 +132,302 @@ with st.sidebar:
             "📊 Analytics",
             "🏆 Top Charts",
             "🤖 AI Prediction",
-            "❤️ Recommendation"
+            "❤️ Recommendation",
+           "🎧 AI Music Personality",
+            "🌟 Conclusion"
         ]
     )
 
-st.sidebar.markdown("---")
-
-st.sidebar.success("MCA Final Project")
-
-st.sidebar.write("Python + Streamlit + ML")
-
-# ---------------- HOME ---------------- #
-
-if page == "🏠 Home":
+    st.markdown("---")
 
     st.markdown("""
     <div style="
-    background:linear-gradient(90deg,#000000,#1DB954);
-    padding:30px;
-    border-radius:20px;
+        background:pink;
+        padding:15px;
+        border-radius:15px;
+        border-left:5px solid green;
     ">
-    <h1 style="color:pink;">
-    🎵 Spotify AI Dashboard
-    </h1>
+    <h4 style="color:red;">⚙ Technologies</h4>
 
-    <h4 style="color: red;">
-    Machine Learning Based Music Recommendation System
-    </h4>
+    🐍 Python<br>
+    📊 Streamlit<br>
+    🤖 Scikit-Learn<br>
+    📁 Pandas<br>
+    🎵 Spotify Dataset
+    </div>
+    """, unsafe_allow_html=True)
 
+    st.markdown("---")
+    st.caption("💚 MCA Final Project • 2026")
+    
+# ===================== 🏠 HOME PAGE =====================
+
+if page == "🏠 Home":
+
+    # ================= Premium Banner =================
+    st.markdown("""
+    <div style="
+        background:linear-gradient(90deg,#000000,#1DB954);
+        padding:30px;
+        border-radius:20px;
+        text-align:center;
+        box-shadow:0px 5px 15px rgba(0,0,0,0.4);
+    ">
+        <h1 style="color:white;">🎵 Spotify AI Dashboard</h1>
+        <h3 style="color:#FFD700;">
+            Machine Learning Based Music Recommendation System
+        </h3>
+        <p style="color:white;">
+            🎧 Discover • Analyze • Recommend • Enjoy
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
     st.write("")
 
-    c1, c2, c3, c4 = st.columns(4)
+    # ================= Dashboard Overview =================
+    st.subheader("📊 Dashboard Overview")
 
-    with c1:
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
         st.metric("🎵 Songs", len(df))
 
-    with c2:
+    with col2:
         st.metric("🎤 Artists", df["Artist"].nunique())
 
-    with c3:
+    with col3:
         st.metric("💿 Albums", df["Album"].nunique())
 
-    with c4:
+    with col4:
         st.metric("🎼 Genres", df["Genre"].nunique())
 
+    st.caption("Real-time overview of the Spotify music dataset.")
+
+    # ================= Trending Songs =================
     st.markdown("---")
 
-    st.subheader("🔥 Trending Songs")
+    st.subheader("🔥 Today's Top 10 Trending Songs")
 
     top = df.sort_values(
         "Popularity",
         ascending=False
     ).head(10)
 
-    st.dataframe(top, use_container_width=True)
+    st.dataframe(
+        top,
+        use_container_width=True
+    )
+        # ================= AI Choice with Image + Link =================
 
-    
+    st.markdown("---")
+    st.subheader("🤖 AI Choice 🎧")
 
-# ================= SONG PAGE =================
 
-elif page == "🎵 Songs":
+    st.markdown("""
+    <style>
+    div.stButton > button:first-child {
+        background: linear-gradient(90deg,#1DB954,#00ff88);
+        color:white;
+        font-size:18px;
+        font-weight:bold;
+        border-radius:20px;
+        height:50px;
+        width:250px;
+    }
+
+    div.stButton > button:hover {
+        background:linear-gradient(90deg,#00ff88,#1DB954);
+        color:black;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+
+
+    if st.button(
+        "🤖 Let AI Choose",
+        key="home_ai_choice"
+    ):
+
+
+        home_ai_song = df.sample(1)
+
+        home_song_name = home_ai_song.iloc[0]["Track_Name"]
+
+        home_artist = home_ai_song.iloc[0]["Artist"]
+
+
+
+        col1, col2 = st.columns([1,2])
+
+
+        with col1:
+
+            st.image(
+                "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+                width=220
+            )
+
+
+        with col2:
+
+            st.success(f"""
+🎵 **{home_song_name}**
+
+🎤 Artist : {home_artist}
+
+💿 Album : {home_ai_song.iloc[0]['Album']}
+
+⭐ Popularity : {home_ai_song.iloc[0]['Popularity']}
+""")
+
+
+            import urllib.parse
+
+
+            home_search = urllib.parse.quote(
+                home_song_name + " " + home_artist
+            )
+
+
+            spotify_link = (
+                "https://open.spotify.com/search/"
+                + home_search
+            )
+
+
+            youtube_link = (
+                "https://www.youtube.com/results?search_query="
+                + home_search
+            )
+
+
+            c1,c2 = st.columns(2)
+
+
+            with c1:
+
+                st.link_button(
+                    "🎧 Play Spotify",
+                    spotify_link
+                )
+
+
+            with c2:
+
+                st.link_button(
+                    "▶️ Play YouTube",
+                    youtube_link
+                )
+
+
+
+    # ================= Surprise Me =================
+
+
+    st.markdown("---")
+
+    st.subheader("🎲 Surprise Me")
+
+
+    if st.button(
+        "🎁 Recommend a Surprise Song",
+        key="home_surprise_button"
+    ):
+
+
+        st.session_state.home_surprise_song = df.sample(1)
+
+        st.balloons()
+
+
+
+    if "home_surprise_song" in st.session_state:
+
+
+        surprise_song = st.session_state.home_surprise_song
+
+
+        surprise_name = surprise_song.iloc[0]["Track_Name"]
+
+        surprise_artist = surprise_song.iloc[0]["Artist"]
+
+
+
+        st.success(f"""
+🎵 **{surprise_name}**
+
+🎤 Artist : {surprise_artist}
+
+💿 Album : {surprise_song.iloc[0]['Album']}
+
+⭐ Popularity : {surprise_song.iloc[0]['Popularity']}
+""")
+
+
+        import urllib.parse
+
+
+        surprise_search = urllib.parse.quote(
+            surprise_name + " " + surprise_artist
+        )
+
+
+        a,b,c = st.columns(3)
+
+
+        with a:
+
+            st.link_button(
+                "🎧 Spotify",
+                "https://open.spotify.com/search/" + surprise_search
+            )
+
+
+        with b:
+
+            st.link_button(
+                "▶️ YouTube",
+                "https://www.youtube.com/results?search_query=" + surprise_search
+            )
+
+
+        with c:
+
+            if st.button(
+                "💡 Song Knowledge",
+                key="home_song_knowledge"
+            ):
+
+                st.info(f"""
+🎼 Song Information
+
+🎵 Title:
+{surprise_name}
+
+🎤 Artist:
+{surprise_artist}
+
+💿 Album:
+{surprise_song.iloc[0]['Album']}
+
+⭐ Popularity:
+{surprise_song.iloc[0]['Popularity']}
+
+🎧 Energy:
+{surprise_song.iloc[0].get('Energy','N/A')}
+
+💃 Danceability:
+{surprise_song.iloc[0].get('Danceability','N/A')}
+
+🎸 Genre:
+{surprise_song.iloc[0].get('Genre','N/A')}
+""")
+            
+            
+#=============SONG PAGE=============
+elif  page == "🎵 Songs":
 
     st.title("🎵 Songs Library")
     st.write("Search and Explore Spotify Songs")
@@ -114,7 +444,7 @@ elif page == "🎵 Songs":
                 na=False
             )
         ]
-    else:
+    else:# Create a copy of original dataset
         song_df = df.copy()
 
     # Empty Check
@@ -163,7 +493,7 @@ elif page == "🎵 Songs":
 
         # Song Statistics
         st.subheader("📊 Song Statistics")
-
+# Calculate average quality score using Popularity, Energy and Danceability
         if "Popularity" in df.columns:
             st.write("⭐ Popularity")
             st.progress(min(float(song_data["Popularity"])  /100, 1.0))
@@ -195,6 +525,7 @@ elif page == "🎵 Songs":
         st.markdown("---")
 
         # Music Buttons
+        # Create Spotify search URL uniform resource loactor 
         spotify = (
             "https://open.spotify.com/search/"
             + song.replace(" ", "%20")
@@ -223,7 +554,7 @@ elif page == "🎵 Songs":
 
         st.success("✅ Song Loaded Successfully 🎵")
     # ================= ARTISTS PAGE =================
-
+# Filter dataset by selected artist
 elif page == "🎤 Artists":
 
     st.title("🎤 Artists")
@@ -296,7 +627,7 @@ elif page == "🎤 Artists":
 
     st.subheader("📈 Song Popularity")
 
-
+# Create interactive bar chart using Plotly
     fig, ax = plt.subplots(figsize=(8,4))
 
 
@@ -337,7 +668,7 @@ elif page == "🏷 Genres":
         "Choose Genre",
         sorted(df["Genre"].dropna().unique()),
     )
-
+# Count songs in each genre
     genre_df = df[df["Genre"] == genre]
 
     st.markdown("---")
@@ -454,7 +785,7 @@ elif page == "📊 Analytics":
     # Metrics
 
     c1, c2, c3, c4 = st.columns(4)
-
+#slect unique song 
     c1.metric("🎵 Songs", len(df))
     c2.metric("🎤 Artists", df["Artist"].nunique())
     c3.metric("💿 Albums", df["Album"].nunique())
@@ -655,7 +986,7 @@ elif page == "🏆 Top Charts":
         .head(10)
         .reset_index()
     )
-
+#to f ka matlab "formatted string" (f-string) hota hai.
 
     fig = px.bar(
         artist,
@@ -991,14 +1322,15 @@ elif page == "❤️ Recommendation":
     with col3:
         st.metric(label="Distance Algorithm", value="Minkowski / Euclidean")
 
-    # 🛠️ DATA PREPARATION & CLEANING
+ # Audio features jo ML model use karega similarity nikalne ke liye
     feature_cols = ["Popularity", "Danceability", "Energy", "Valence", "Tempo"]
-    # Drop duplicates and reset index to completely prevent IndexError
+    
+# Missing values aur duplicate songs remove kiye taki model error na de
     ml_df = df.dropna(subset=feature_cols).drop_duplicates(subset=["Track_Name"]).reset_index(drop=True)
 
     st.markdown("---")
 
-    # 🎛️ MODEL HYPERPARAMETERS
+    # User K (number of recommendations) select karta hai
     st.markdown("### 🎛️ Model Hyperparameters")
     k_neighbors = st.slider("Select K-Value (Number of Neighbors)", min_value=3, max_value=10, value=5)
     metric_choice = st.selectbox("Select Distance Metric", ["euclidean", "manhattan"])
@@ -1089,3 +1421,420 @@ elif page == "❤️ Recommendation":
         except Exception as error_msg:
             st.error(f"Execution Error: {str(error_msg)}")
             st.info("Verify that 'scaler' is globally initialized at the top level of the codebase script.")
+           # I selected this project to apply Machine Learning and Data Analytics
+           #  in a practical, real-world application.
+elif page == "🎧 AI Music Personality":
+
+    import time
+    import urllib.parse
+
+    st.title("🎧 AI Music Personality Scanner 🤖")
+
+    st.write(
+        "Discover your music personality using AI analysis!"
+    )
+
+    st.markdown("---")
+
+
+    # ================= USER INPUT =================
+
+
+    st.subheader("🎭 Step 1: Choose Your Mood")
+
+
+    if "personality_mood" not in st.session_state:
+        st.session_state.personality_mood = ""
+
+
+    c1,c2,c3 = st.columns(3)
+
+
+    with c1:
+        if st.button("😊 Happy"):
+            st.session_state.personality_mood="Happy"
+
+
+    with c2:
+        if st.button("🔥 Energetic"):
+            st.session_state.personality_mood="Energetic"
+
+
+    with c3:
+        if st.button("💙 Emotional"):
+            st.session_state.personality_mood="Emotional"
+
+
+
+    st.markdown("---")
+
+
+    listening = st.selectbox(
+        "🎧 When do you usually listen to music?",
+        [
+            "🌅 Morning",
+            "🌙 Night",
+            "🚗 Travel",
+            "🏋️ Workout"
+        ]
+    )
+
+
+    style = st.selectbox(
+        "🎵 Your favourite music style?",
+        [
+            "🔥 High Energy",
+            "❤️ Romantic",
+            "😌 Calm",
+            "🎉 Party"
+        ]
+    )
+
+
+
+    st.markdown("---")
+
+
+
+    # ================= AI BUTTON =================
+
+
+    if st.button("🤖 Analyze My Music Personality"):
+
+
+        if st.session_state.personality_mood == "":
+
+
+            st.warning(
+                "Please select your mood first 😊"
+            )
+
+
+        else:
+
+
+            with st.spinner(
+                "🤖 AI is analyzing your music taste..."
+            ):
+
+                time.sleep(2)
+
+
+
+            st.success(
+                "✨ Analysis Complete!"
+            )
+
+
+            st.balloons()
+
+
+
+            # ================= PERSONALITY LOGIC =================
+
+
+            if (
+                st.session_state.personality_mood=="Happy"
+                and style=="🎉 Party"
+            ):
+
+                personality="🎉 The Mood Booster"
+
+
+                songs=[
+                    "Happy - Pharrell Williams",
+                    "Uptown Funk - Bruno Mars"
+                ]
+
+
+
+            elif style=="❤️ Romantic":
+
+                personality="❤️ The Romantic Listener"
+
+
+                songs=[
+                    "Perfect - Ed Sheeran",
+                    "Until I Found You"
+                ]
+
+
+
+            elif style=="😌 Calm":
+
+                personality="🌙 The Peace Seeker"
+
+
+                songs=[
+                    "Photograph - Ed Sheeran",
+                    "Night Changes"
+                ]
+
+
+
+            else:
+
+                personality="🔥 The Energy Explorer"
+
+
+                songs=[
+                    "Believer - Imagine Dragons",
+                    "Thunder - Imagine Dragons"
+                ]
+
+
+
+            # ================= AI RESULT CARD =================
+
+
+            st.subheader("🎧 Your AI Music Personality")
+
+
+            st.markdown(
+            f"""
+            <div style="
+            background:linear-gradient(135deg,#121212,#1DB954);
+            padding:35px;
+            border-radius:25px;
+            box-shadow:0px 0px 25px #1DB954;
+            ">
+
+            <h1 style="color:white;text-align:center;">
+            {personality}
+            </h1>
+
+            <h3 style="color:white;text-align:center;">
+            AI understands your musical emotions 🎶
+            </h3>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+            )
+
+
+
+            st.markdown("---")
+
+
+
+            # ================= SCORE CARDS =================
+
+
+            col1,col2,col3 = st.columns(3)
+
+
+            with col1:
+
+                st.metric(
+                    "🎭 Mood Match",
+                    "95%"
+                )
+
+
+            with col2:
+
+                st.metric(
+                    "🔥 Energy Level",
+                    "88%"
+                )
+
+
+            with col3:
+
+                st.metric(
+                    "🤖 AI Confidence",
+                    "96%"
+                )
+
+
+
+            st.markdown("---")
+
+
+
+            # ================= SONG RECOMMENDATION =================
+
+
+            st.subheader("🎵 AI Recommended For You")
+
+
+            for song in songs:
+
+
+                st.markdown(
+                f"""
+                <div style="
+                background:#191919;
+                padding:20px;
+                border-radius:18px;
+                margin:15px 0;
+                border-left:6px solid #1DB954;
+                ">
+
+                <h2 style="color:#1DB954;">
+                🎵 {song}
+                </h2>
+
+                <p style="color:white;">
+                🤖 AI Match: 94%
+                <br>
+                ⭐ Personalized Recommendation
+                </p>
+
+                </div>
+                """,
+                unsafe_allow_html=True
+                )
+
+
+
+                search = urllib.parse.quote(song)
+
+
+                spotify = (
+                f"https://open.spotify.com/search/{search}"
+                )
+
+
+                youtube = (
+                f"https://www.youtube.com/results?search_query={search}"
+                )
+
+
+                a,b = st.columns(2)
+
+
+                with a:
+
+                    st.link_button(
+                        "🚀 Listen Now",
+                        spotify
+                    )
+
+
+                with b:
+
+                    st.link_button(
+                        "▶️ Watch Song",
+                        youtube
+                    )
+
+
+
+            st.markdown("---")
+
+
+            st.info(
+            """
+            🧠 How AI Works:
+
+            User Preference
+            +
+            Mood Analysis
+            +
+            Song Features
+            +
+            Machine Learning (KNN)
+
+            = Smart Personalized Recommendation 🎧
+            """
+            )
+   # ===================== 🌟 CONCLUSION PAGE =====================
+
+elif page == "🌟 Conclusion":
+
+    st.title("🎧 AI Music Studio")
+
+
+    st.markdown("""
+    <div style="
+    background:linear-gradient(135deg,#121212,#1DB954);
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    ">
+
+    <h1 style="color:white;">
+    🚀 Project Successfully Completed
+    </h1>
+
+    <p style="color:white;font-size:20px;">
+    Machine Learning + Music Intelligence
+    </p>
+
+    </div>
+    """, unsafe_allow_html=True)
+
+
+    st.write("")
+
+
+    st.subheader("📌 What This System Can Do?")
+
+
+    features = [
+        "🎵 Analyze thousands of music patterns",
+        "🤖 Recommend songs using AI similarity",
+        "📊 Visualize music trends",
+        "🎤 Explore artists and genres",
+        "❤️ Create a personalized music experience"
+    ]
+
+
+    for item in features:
+        st.success(item)
+
+
+
+    st.markdown("---")
+
+
+    st.subheader("🏆 Technology Stack")
+
+
+    col1, col2, col3, col4 = st.columns(4)
+
+
+    with col1:
+        st.metric("🐍 Python","Core")
+
+
+    with col2:
+        st.metric("🤖 ML","KNN")
+
+
+    with col3:
+        st.metric("📊 Dashboard","Streamlit")
+
+
+    with col4:
+        st.metric("🎵 Data","Spotify")
+
+
+
+    st.markdown("---")
+
+
+    st.markdown("""
+    <div style="
+    padding:25px;
+    background:#000;
+    border-radius:20px;
+    text-align:center;
+    ">
+
+    <h2 style="color:#1DB954;">
+    🎶 Your Next Favorite Song Is Waiting
+    </h2>
+
+    <p style="color:white;">
+    Thank you for exploring my AI-powered music recommendation system ❤️
+    </p>
+
+    </div>
+    """, unsafe_allow_html=True)
+    
+    
+
+    
