@@ -87,7 +87,7 @@ st.sidebar.markdown("""
 <div class="icon">🎧</div>
 
 <div class="name">
-<span>SMuskanNova AI</span> 
+<span>MuskanNova AI</span> 
 </div>
 
 <div class="line"></div>
