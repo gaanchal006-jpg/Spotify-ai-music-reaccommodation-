@@ -27,13 +27,14 @@ st.sidebar.markdown("""
 
 .muskan-card{
 
-    background: linear-gradient(
-        135deg,
-        #f3e8ff,
-        #d8b4fe,
-        #a855f7
-    ) !important;
+ .muskan-card{
+    background: linear-gradient(135deg,#f3e8ff,#d8b4fe,#a855f7) !important;
+    color:#000 !important;
+}
 
+.muskan-card *{
+    color:#000 !important;
+}
     border-radius:18px;
 
     padding:18px 10px;
