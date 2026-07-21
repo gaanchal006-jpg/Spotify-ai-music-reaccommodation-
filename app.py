@@ -79,64 +79,65 @@ st.sidebar.markdown("""
     }
 }
 
-st.markdown(
-    "<h1 style='text-align:center;'>🎧 MuskanNova AI Dashboard</h1>",
-    unsafe_allow_html=True
-)
 
-col1, col2 = st.columns([1, 5])
+</style>
 
-with col1:
-    st.image("muskannova_logo.png", width=100)
+<div class="brand">
 
-with col2:
-    st.markdown("""
-    <h2 style="color:white; margin-bottom:0px;">
-        MuskanNova AI Dashboard
-    </h2>
-    <h4 style="color:#FFD700;">
-        Intelligent Music Recommendation System
-    </h4>
-    """, unsafe_allow_html=True)
+<div class="icon">🎧</div>
 
-# ================= SIDEBAR =================
+<div class="name">
+<span></span> AI
+</div>Muskan Nova AI
 
-st.sidebar.image("muskannova_logo.png", width=150)
+<div class="line"></div>
 
-st.sidebar.markdown("""
-<div style="
-background:linear-gradient(135deg,#1DB954,#0f172a);
-padding:18px;
-border-radius:18px;
-text-align:center;
-margin-bottom:18px;
-">
-<h2 style="color:white;">🤖 AI CONTROL PANEL</h2>
+<div class="tag">
+MuskanNova AI – Intelligent Music<br>
+Recommendation System
+</div>
 
-<p style="color:white;">
-🟢 Model Status : Online<br>
-🎵 Dataset : Loaded<br>
-⚡ Recommendation Engine : Active
-</p>
+<div class="badge">
+Powered by KNN
+</div>
 
 </div>
 """, unsafe_allow_html=True)
+with st.sidebar:
 
-page = st.sidebar.radio(
-    "📌 Navigation",
-    [
-        "🏠 Home",
-        "🎵 Songs",
-        "🎤 Artists",
-        "🏷 Genres",
-        "📊 Analytics",
-        "🏆 Top Charts",
-        "🤖 AI Prediction",
-        "❤️ Recommendation",
-        "🎧 AI Music Personality",
-        "🌟 Conclusion"
-    ]
-)
+    st.markdown("""
+    <div style="
+        background:linear-gradient(135deg,#1DB954,red);
+        padding:18px;
+        border-radius:18px;
+        text-align:center;
+        margin-bottom:18px;
+    ">
+        <h2 style="color:white;">🤖 AI CONTROL PANEL</h2>
+        <p style="color:white;">
+        🟢 Model Status : Online<br>#current system status#==
+        🎵 Dataset : Loaded<br>#==dataset load#==
+        ⚡ Recommendation Engine : Active #model active or not #
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    page = st.radio(
+        "📌 Navigation",
+        [
+            "🏠 Home",
+            "🎵 Songs",
+            "🎤 Artists",
+            "🏷 Genres",
+            "📊 Analytics",
+            "🏆 Top Charts",
+            "🤖 AI Prediction",
+            "❤️ Recommendation",
+           "🎧 AI Music Personality",
+            "🌟 Conclusion"
+        ]
+    )
+
     st.markdown("---")
 
     st.markdown("""
